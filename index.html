@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClarityGrain — Data analytics consulting for independent restaurants, cafes, and food retailers. We help small food businesses find where they're losing money.">
+  <meta name="keywords" content="food analytics, restaurant consulting, cafe data, menu optimization, food retail analytics">
+  <meta property="og:title" content="ClarityGrain — Food & Restaurant Analytics">
+  <meta property="og:description" content="We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.">
+  <meta property="og:type" content="website">
+  <title>ClarityGrain — Food & Restaurant Analytics</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <div class="logo" onclick="showPage('services')" role="button" tabindex="0" aria-label="ClarityGrain home">
+      Clarity<em>Grain</em>
+    </div>
+    <ul class="nav-links" role="navigation" aria-label="Main navigation">
+      <li><a onclick="showPage('services')" id="nav-services" role="button" tabindex="0">Services</a></li>
+      <li><a onclick="showPage('approach')" id="nav-approach" role="button" tabindex="0">Approach</a></li>
+      <li><a onclick="showPage('contact')"  id="nav-contact"  role="button" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── SERVICES PAGE ── -->
+  <main class="page" id="page-services" role="main">
+
+    <header class="page-hero">
+      <div class="page-eyebrow">What we offer</div>
+      <h1>Simple services,<br><em>clear outcomes</em></h1>
+    </header>
+
+    <section class="services-intro" aria-label="Overview">
+      <p>Every engagement starts with your data — POS exports, review platforms, delivery app reports. We clean it, connect it, and surface the one thing that matters most to your business right now.</p>
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <div class="intro-stat-val">Free</div>
+          <div class="intro-stat-desc">Every relationship starts with a no-commitment audit — no invoice, no pitch</div>
+        </div>
+        <div class="intro-stat">
+          <div class="intro-stat-val">Fixed</div>
+          <div class="intro-stat-desc">Project pricing agreed upfront — no hourly surprises or scope creep</div>
+        </div>
+        <div class="intro-stat">
+          <div class="intro-stat-val">Fast</div>
+          <div class="intro-stat-desc">Most projects delivered within two weeks of receiving your data</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-list" aria-label="Services">
+      <article class="service-row">
+        <div class="svc-num">01</div>
+        <div>
+          <h2 class="svc-name">Free review audit</h2>
+          <div class="svc-tags">
+            <span class="svc-tag">Yelp</span>
+            <span class="svc-tag">Google</span>
+            <span class="svc-tag">No data access needed</span>
+          </div>
+        </div>
+        <p class="svc-desc">We analyze your public reviews to find patterns — what hours, what dishes, what interactions are driving 1-star ratings. Delivered as a clean one-page PDF within 48 hours. No login access needed, no commitment required.</p>
+        <div>
+          <div class="svc-price">Free</div>
+          <div class="svc-price-note">Always</div>
+        </div>
+      </article>
+
+      <article class="service-row">
+        <div class="svc-num">02</div>
+        <div>
+          <h2 class="svc-name">Sales &amp; waste analysis</h2>
+          <div class="svc-tags">
+            <span class="svc-tag">Square</span>
+            <span class="svc-tag">Toast</span>
+            <span class="svc-tag">Clover</span>
+          </div>
+        </div>
+        <p class="svc-desc">We connect your POS data to identify your most and least profitable items, your peak hours, and where food waste is quietly eating your margins. Delivered as a mobile-friendly dashboard plus a one-page summary with one clear action to take.</p>
+        <div>
+          <div class="svc-price">$600</div>
+          <div class="svc-price-note">Fixed — one time</div>
+        </div>
+      </article>
+
+      <article class="service-row">
+        <div class="svc-num">03</div>
+        <div>
+          <h2 class="svc-name">Market research report</h2>
+          <div class="svc-tags">
+            <span class="svc-tag">Competitive analysis</span>
+            <span class="svc-tag">Consumer trends</span>
+          </div>
+        </div>
+        <p class="svc-desc">A structured report on your local market — who your competitors are, what gaps exist, and where your business is positioned. Useful before a menu change, a price increase, or a new location decision.</p>
+        <div>
+          <div class="svc-price">$800</div>
+          <div class="svc-price-note">Fixed — one time</div>
+        </div>
+      </article>
+
+      <article class="service-row">
+        <div class="svc-num">04</div>
+        <div>
+          <h2 class="svc-name">Monthly insight report</h2>
+          <div class="svc-tags">
+            <span class="svc-tag">Ongoing</span>
+            <span class="svc-tag">Cancel anytime</span>
+          </div>
+        </div>
+        <p class="svc-desc">One finding every month — an updated dashboard and one specific recommendation tied to your actual numbers. No jargon, no bloat. Designed for owners who want to stay on top of their data without spending hours on it.</p>
+        <div>
+          <div class="svc-price">$150</div>
+          <div class="svc-price-note">Per month</div>
+        </div>
+      </article>
+    </section>
+
+    <div class="services-cta">
+      <div>
+        <h2 class="cta-heading">Not sure which fits you?</h2>
+        <p>Start with the free audit. We'll recommend what makes sense from there.</p>
+      </div>
+      <button class="btn-primary" onclick="showPage('contact')" aria-label="Get the free audit">Get the free audit →</button>
+    </div>
+
+  </main>
+
+  <!-- ── APPROACH PAGE ── -->
+  <main class="page" id="page-approach" role="main">
+
+    <header class="page-hero">
+      <div class="page-eyebrow">How we work</div>
+      <h1>No jargon.<br><em>No guesswork.</em></h1>
+    </header>
+
+    <section class="approach-intro" aria-label="Philosophy">
+      <div class="approach-label">Our philosophy</div>
+      <p>Small food businesses don't need enterprise analytics — they need one clear answer to one real problem. Every engagement starts with listening, not pitching. We figure out where the pain is, find the data that speaks to it, and hand you something actionable.</p>
+    </section>
+
+    <section class="steps" aria-label="Our process">
+      <article class="step-row">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-time">Day 1 — free</div>
+          <h2 class="step-title">We look at your reviews</h2>
+          <p class="step-desc">Before we ask for anything, we analyze your public Yelp and Google reviews and send you a one-page summary of what we found. No login access, no contract, no cost.</p>
+        </div>
+        <blockquote class="step-quote">34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays.</blockquote>
+      </article>
+
+      <article class="step-row">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-time">Week 1 — discovery</div>
+          <h2 class="step-title">We listen before we build</h2>
+          <p class="step-desc">A 30-minute conversation in your space. We ask about your POS system, your busiest hours, what's been worrying you. We don't pitch. We take notes and figure out where data can actually help.</p>
+        </div>
+        <blockquote class="step-quote">Tell me about the days when things feel off. What does a bad Tuesday look like for you?</blockquote>
+      </article>
+
+      <article class="step-row">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-time">Week 1–2 — analysis</div>
+          <h2 class="step-title">We connect your data</h2>
+          <p class="step-desc">With your permission we pull your POS data and clean it. We build a simple dashboard and run the analysis. You don't need to do anything technical.</p>
+        </div>
+        <blockquote class="step-quote">You're ordering 40 croissants every Monday. You're selling 18 on average. That's $220 in waste every single week.</blockquote>
+      </article>
+
+      <article class="step-row">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-time">Week 2 — delivery</div>
+          <h2 class="step-title">One clear recommendation</h2>
+          <p class="step-desc">A dashboard link you can open on your phone and a one-page summary with one specific action. Not ten suggestions — one. The thing most likely to save you money in the next 30 days.</p>
+        </div>
+        <blockquote class="step-quote">Order 22 croissants on Mondays. Check back in a month and tell us how much you saved.</blockquote>
+      </article>
+
+      <article class="step-row">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-time">Month 2 onward — optional</div>
+          <h2 class="step-title">We keep finding things</h2>
+          <p class="step-desc">If the first insight saved you money, we can keep looking once a month for $150. If it didn't, you owe nothing beyond the original fee.</p>
+        </div>
+        <blockquote class="step-quote">You saved $180 last month. What if I found you one more thing like that, every month, for $150?</blockquote>
+      </article>
+    </section>
+
+    <section class="values-section" aria-label="Values">
+      <h2>What we believe</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-name">Specificity over volume</div>
+          <p class="value-desc">One finding that applies to your Tuesday is worth more than ten generic best practices from an industry report.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Price that makes sense</div>
+          <p class="value-desc">If our work doesn't save you more than it costs, it's not worth doing. We price every engagement with that math in mind.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">No commitment to start</div>
+          <p class="value-desc">Every relationship begins with a free audit. You decide if it's worth continuing — not the other way around.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── CONTACT PAGE ── -->
+  <main class="page" id="page-contact" role="main">
+
+    <header class="page-hero">
+      <div class="page-eyebrow">Get in touch</div>
+      <h1>Start with<br><em>a free look</em></h1>
+    </header>
+
+    <div class="contact-layout">
+      <section class="contact-left" aria-label="Contact information">
+        <div>
+          <h2 class="contact-heading">We review your data.<br><em>You decide</em> what comes next.</h2>
+          <p class="contact-left-desc">Send us your business name and email. We'll look at your public reviews within 48 hours and send you a one-page summary — at no cost, with no obligation.</p>
+        </div>
+        <div class="contact-details">
+          <div>
+            <div class="contact-detail-label">Response time</div>
+            <div class="contact-detail-val">Within 48 hours</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">First step cost</div>
+            <div class="contact-detail-val">Free — always</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">What we need to start</div>
+            <div class="contact-detail-val">Just your business name</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Who we work with</div>
+            <div class="contact-detail-val">Restaurants, cafes, coffee shops, food retail</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-right" aria-label="Contact form">
+        <span class="form-section-label">Send us a message</span>
+        <!-- Replace action with your Formspree endpoint: https://formspree.io -->
+        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Maria" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="business">Business name</label>
+              <input class="form-input" type="text" id="business" name="business" placeholder="The Corner Cafe" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="maria@thecornercafe.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="type">Type of business</label>
+            <input class="form-input" type="text" id="type" name="business_type" placeholder="Coffee shop, restaurant, food retail...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="challenge">Your biggest challenge right now</label>
+            <textarea class="form-textarea" id="challenge" name="challenge" placeholder="Rising food costs, slow Tuesdays, bad reviews..."></textarea>
+          </div>
+          <button class="form-btn" type="submit">Get in touch</button>
+          <p class="form-note">We'll review your public reviews and send you a one-page summary within 48 hours. No invoice, no follow-up pitch.</p>
+        </form>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">ClarityGrain LLC</div>
+    <div class="footer-copy">© 2026 ClarityGrain LLC</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

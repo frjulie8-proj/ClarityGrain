@@ -10,6 +10,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  body { -webkit-text-size-adjust: 100%; }
   .site { font-family: 'DM Sans', sans-serif; font-weight: 300; background: #F7F4EF; color: #1C1A17; }
 
   nav {
@@ -18,11 +19,11 @@
     position: sticky; top: 0; background: #F7F4EF; z-index: 100;
   }
 
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.04em; cursor: pointer; color: #1C1A17; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size:22px; font-weight: 400; letter-spacing: 0.04em; cursor: pointer; color: #1C1A17; }
   .logo em { font-style: italic; font-weight: 300; color: #8B6F47; }
 
   .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5449; text-decoration: none; cursor: pointer; transition: color 0.2s; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size:13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5449; text-decoration: none; cursor: pointer; transition: color 0.2s; }
   .nav-links a:hover, .nav-links a.active { color: #1C1A17; }
 
   .page { display: none; }
@@ -30,11 +31,11 @@
   @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   /* shared */
-  .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: #8B6F47; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: #8B6F47; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
   .eyebrow::before { content: ''; display: block; width: 20px; height: 0.5px; background: #8B6F47; flex-shrink: 0; }
   h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.1; color: #1C1A17; }
   h1 em { font-style: italic; color: #8B6F47; }
-  h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #1C1A17; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size:34px; font-weight: 300; color: #1C1A17; }
   .divider { border: none; border-top: 0.5px solid rgba(28,26,23,0.12); margin: 0; }
 
   /* ── HOME ── */
@@ -44,12 +45,12 @@
     border-bottom: 0.5px solid rgba(28,26,23,0.12);
   }
   .home-hero h1 { font-size: 62px; margin-bottom: 20px; }
-  .home-hero p { font-size: 15px; font-weight: 300; line-height: 1.8; color: #5C5449; max-width: 400px; margin-bottom: 36px; }
+  .home-hero p { font-size:16px; font-weight: 300; line-height: 1.8; color: #5C5449; max-width: 400px; margin-bottom: 36px; }
   .hero-cta { display: flex; gap: 16px; align-items: center; }
 
-  .btn-primary { background: #1C1A17; color: #F7F4EF; border: none; padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .btn-primary { background: #1C1A17; color: #F7F4EF; border: none; padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
   .btn-primary:hover { background: #3A3530; }
-  .btn-ghost { background: transparent; border: none; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 0; }
+  .btn-ghost { background: transparent; border: none; font-family: 'DM Sans', sans-serif; font-size:13px; font-weight: 300; color: #5C5449; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 0; }
   .btn-ghost::after { content: '→'; }
 
   .hero-right { display: flex; flex-direction: column; gap: 10px; }
@@ -57,31 +58,31 @@
   .stat-card.dark { background: #1C1A17; }
   .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #1C1A17; line-height: 1; }
   .stat-card.dark .stat-val { color: #F7F4EF; }
-  .stat-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.07em; text-transform: uppercase; color: #8B6F47; text-align: right; max-width: 130px; line-height: 1.5; }
+  .stat-label { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.07em; text-transform: uppercase; color: #8B6F47; text-align: right; max-width: 130px; line-height: 1.5; }
   .stat-card.dark .stat-label { color: #6B5D4F; }
 
   .home-who { padding: 72px 48px; display: grid; grid-template-columns: 180px 1fr; gap: 80px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
-  .who-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 8px; }
-  .who-headline { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; line-height: 1.35; color: #1C1A17; margin-bottom: 16px; }
-  .who-text { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #5C5449; margin-bottom: 28px; }
+  .who-label { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 8px; }
+  .who-headline { font-family: 'Cormorant Garamond', serif; font-size:32px; font-weight: 300; line-height: 1.35; color: #1C1A17; margin-bottom: 16px; }
+  .who-text { font-family: 'DM Sans', sans-serif; font-size:15px; font-weight: 300; line-height: 1.8; color: #5C5449; margin-bottom: 28px; }
   .tags { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tag { background: #EDE8DF; padding: 7px 14px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.06em; color: #5C5449; }
+  .tag { background: #EDE8DF; padding: 7px 14px; font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.06em; color: #5C5449; }
 
   .home-preview { padding: 72px 48px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
   .home-preview h2 { margin-bottom: 40px; }
   .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
   .preview-card { background: #F7F4EF; padding: 32px 28px; cursor: pointer; transition: background 0.2s; }
   .preview-card:hover { background: #EDE8DF; }
-  .preview-tier { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
-  .preview-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.3; margin-bottom: 10px; }
-  .preview-desc { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 16px; }
-  .preview-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #1C1A17; }
+  .preview-tier { font-family: 'DM Sans', sans-serif; font-size:11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .preview-q { font-family: 'Cormorant Garamond', serif; font-size:22px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.3; margin-bottom: 10px; }
+  .preview-desc { font-family: 'DM Sans', sans-serif; font-size:13px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 16px; }
+  .preview-price { font-family: 'Cormorant Garamond', serif; font-size:24px; font-weight: 300; color: #1C1A17; }
 
   .home-cta { padding: 72px 48px; background: #1C1A17; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .home-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #F7F4EF; line-height: 1.2; }
   .home-cta h2 em { font-style: italic; color: #C4A882; }
-  .home-cta p { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6B5D4F; margin-top: 14px; line-height: 1.75; }
-  .btn-warm { background: #8B6F47; color: #F7F4EF; border: none; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .home-cta p { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #6B5D4F; margin-top: 14px; line-height: 1.75; }
+  .btn-warm { background: #8B6F47; color: #F7F4EF; border: none; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
   .btn-warm:hover { background: #A07D52; }
 
   /* ── SERVICES ── */
@@ -93,33 +94,33 @@
   .tier-card { background: #F7F4EF; padding: 40px 32px; display: flex; flex-direction: column; gap: 0; transition: background 0.35s ease, transform 0.3s ease; }
   .tier-card.featured { background: #1C1A17; }
 
-  .tier-badge { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 8px; transition: color 0.35s ease; }
+  .tier-badge { font-family: 'DM Sans', sans-serif; font-size:11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 8px; transition: color 0.35s ease; }
   .tier-card.featured .tier-badge { color: #C4A882; }
 
-  .tier-question { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.25; margin-bottom: 6px; transition: color 0.35s ease; }
+  .tier-question { font-family: 'Cormorant Garamond', serif; font-size:28px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.25; margin-bottom: 6px; transition: color 0.35s ease; }
   .tier-card.featured .tier-question { color: #F7F4EF; }
 
-  .tier-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 20px; transition: color 0.35s ease; }
+  .tier-name { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 20px; transition: color 0.35s ease; }
   .tier-card.featured .tier-name { color: #6B5D4F; }
 
   .tier-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #1C1A17; line-height: 1; margin-bottom: 4px; transition: color 0.35s ease; }
   .tier-card.featured .tier-price { color: #F7F4EF; }
 
-  .tier-price-note { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #8B6F47; margin-bottom: 24px; transition: color 0.35s ease; }
+  .tier-price-note { font-family: 'DM Sans', sans-serif; font-size:11px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #8B6F47; margin-bottom: 24px; transition: color 0.35s ease; }
   .tier-card.featured .tier-price-note { color: #6B5D4F; }
 
   .tier-divider { height: 0.5px; background: rgba(28,26,23,0.1); margin-bottom: 24px; transition: background 0.35s ease; }
   .tier-card.featured .tier-divider { background: rgba(247,244,239,0.08); }
 
-  .tier-includes { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 14px; transition: color 0.35s ease; }
+  .tier-includes { font-family: 'DM Sans', sans-serif; font-size:11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 14px; transition: color 0.35s ease; }
   .tier-card.featured .tier-includes { color: #6B5D4F; }
 
   .tier-items { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
-  .tier-item { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.5; display: flex; gap: 10px; transition: color 0.35s ease; }
+  .tier-item { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #5C5449; line-height: 1.5; display: flex; gap: 10px; transition: color 0.35s ease; }
   .tier-card.featured .tier-item { color: #8B7D6B; }
   .tier-item::before { content: '—'; color: #C4A882; flex-shrink: 0; }
 
-  .tier-btn { background: transparent; border: 0.5px solid rgba(28,26,23,0.25); color: #1C1A17; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.35s, color 0.35s; margin-top: auto; }
+  .tier-btn { background: transparent; border: 0.5px solid rgba(28,26,23,0.25); color: #1C1A17; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.35s, color 0.35s; margin-top: auto; }
   .tier-btn:hover { background: #EDE8DF; border-color: rgba(28,26,23,0.4); }
   .tier-card.featured .tier-btn { border-color: rgba(196,168,130,0.4); color: #C4A882; }
   .tier-card.featured .tier-btn:hover { background: rgba(196,168,130,0.08); border-color: rgba(196,168,130,0.7); color: #F7F4EF; }
@@ -127,63 +128,63 @@
   /* Paid menu */
   .menu-section { padding: 64px 48px; border-top: 0.5px solid rgba(28,26,23,0.12); border-bottom: 0.5px solid rgba(28,26,23,0.12); }
   .menu-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 40px; align-items: end; }
-  .menu-header h2 { font-size: 28px; }
-  .menu-note { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
+  .menu-header h2 { font-size:30px; }
+  .menu-note { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #5C5449; line-height: 1.7; }
 
   .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
   .menu-item { background: #F7F4EF; padding: 28px 24px; cursor: pointer; transition: background 0.2s; }
   .menu-item:hover { background: #F0EBE3; }
-  .menu-item-icon { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 10px; }
-  .menu-item-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; line-height: 1.2; }
-  .menu-item-desc { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 14px; }
-  .menu-item-price { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: #8B6F47; text-transform: uppercase; }
+  .menu-item-icon { font-family: 'DM Sans', sans-serif; font-size:11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 10px; }
+  .menu-item-name { font-family: 'Cormorant Garamond', serif; font-size:22px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; line-height: 1.2; }
+  .menu-item-desc { font-family: 'DM Sans', sans-serif; font-size:13px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 14px; }
+  .menu-item-price { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 400; letter-spacing: 0.08em; color: #8B6F47; text-transform: uppercase; }
 
   .svc-cta { padding: 56px 48px; background: #EDE8DF; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
-  .svc-cta h2 { font-size: 26px; font-weight: 300; margin-bottom: 6px; }
-  .svc-cta p { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; }
+  .svc-cta h2 { font-size:28px; font-weight: 300; margin-bottom: 6px; }
+  .svc-cta p { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #5C5449; }
 
   /* ── APPROACH ── */
   .approach-intro { padding: 64px 48px; display: grid; grid-template-columns: 160px 1fr; gap: 80px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
-  .approach-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 6px; }
-  .approach-intro p { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.85; color: #5C5449; }
+  .approach-label { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 6px; }
+  .approach-intro p { font-family: 'DM Sans', sans-serif; font-size:16px; font-weight: 300; line-height: 1.85; color: #5C5449; }
   .steps { border-top: 0.5px solid rgba(28,26,23,0.12); }
   .step-row { display: grid; grid-template-columns: 48px 1fr 1fr; gap: 48px; padding: 48px; border-bottom: 0.5px solid rgba(28,26,23,0.12); align-items: start; }
   .step-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: rgba(28,26,23,0.1); line-height: 1; }
-  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; }
-  .step-time { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
-  .step-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.75; }
-  .step-quote { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; font-style: italic; color: #8B6F47; line-height: 1.7; border-left: 1px solid #C4A882; padding-left: 16px; margin-top: 8px; }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size:26px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; }
+  .step-time { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .step-desc { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #5C5449; line-height: 1.75; }
+  .step-quote { font-family: 'Cormorant Garamond', serif; font-size:16px; font-weight: 300; font-style: italic; color: #8B6F47; line-height: 1.7; border-left: 1px solid #C4A882; padding-left: 16px; margin-top: 8px; }
   .values-section { padding: 64px 48px; }
   .values-section h2 { margin-bottom: 36px; }
   .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
   .value-item { background: #F7F4EF; padding: 32px 28px; }
-  .value-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #1C1A17; margin-bottom: 10px; }
-  .value-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
+  .value-name { font-family: 'Cormorant Garamond', serif; font-size:22px; font-weight: 400; color: #1C1A17; margin-bottom: 10px; }
+  .value-desc { font-family: 'DM Sans', sans-serif; font-size:14px; font-weight: 300; color: #5C5449; line-height: 1.7; }
 
   /* ── CONTACT ── */
   .cg-contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 92vh; }
   .cg-contact-left { display: flex; flex-direction: column; justify-content: center; padding: 48px 52px; }
   .cg-contact-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; line-height: 1.05; color: #1C1A17; margin-bottom: 18px; }
   .cg-contact-h2 em { color: #8B6F47; font-style: italic; }
-  .cg-contact-sub { font-size: 14px; color: #5C5449; line-height: 1.75; margin-bottom: 36px; max-width: 400px; }
-  .cg-contact-sub em { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: #8B6F47; }
+  .cg-contact-sub { font-size:15px; color: #5C5449; line-height: 1.75; margin-bottom: 36px; max-width: 400px; }
+  .cg-contact-sub em { font-family: 'Cormorant Garamond', serif; font-size:16px; font-style: italic; color: #8B6F47; }
   .cg-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
-  .cg-meta-label { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 5px; }
-  .cg-meta-val { font-size: 14px; color: #1C1A17; }
+  .cg-meta-label { font-size:10px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 5px; }
+  .cg-meta-val { font-size:15px; color: #1C1A17; }
   .cg-contact-right { background: #1C1A17; padding: 56px 60px; display: flex; flex-direction: column; justify-content: center; }
-  .cg-form-head { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #8B7D6B; margin-bottom: 40px; }
+  .cg-form-head { font-size:11px; letter-spacing: .12em; text-transform: uppercase; color: #8B7D6B; margin-bottom: 40px; }
   .cg-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   .cg-form-group { display: flex; flex-direction: column; margin-bottom: 32px; }
   .cg-form-group.full { grid-column: 1 / -1; }
-  .cg-form-label { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
-  .cg-form-input { background: transparent; border: none; border-bottom: 1px solid rgba(196,168,130,0.3); padding: 0 0 10px; font-size: 14px; color: #F7F4EF; outline: none; transition: border-color .2s; width: 100%; }
+  .cg-form-label { font-size:10px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .cg-form-input { background: transparent; border: none; border-bottom: 1px solid rgba(196,168,130,0.3); padding: 0 0 10px; font-size:15px; color: #F7F4EF; outline: none; transition: border-color .2s; width: 100%; }
   .cg-form-input::placeholder { color: rgba(247,244,239,0.22); }
   .cg-form-input:focus { border-bottom-color: rgba(196,168,130,0.75); }
   .cg-form-divider { grid-column: 1 / -1; height: 1px; background: rgba(196,168,130,0.1); margin: 0 0 32px; }
   .cg-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 8px; }
-  .cg-submit-btn { background: #F7F4EF; color: #1C1A17; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; border-radius: 7px; border: none; cursor: pointer; flex-shrink: 0; transition: background .2s; }
+  .cg-submit-btn { background: #F7F4EF; color: #1C1A17; font-size:12px; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; border-radius: 7px; border: none; cursor: pointer; flex-shrink: 0; transition: background .2s; }
   .cg-submit-btn:hover { background: #EDE8DF; }
-  .cg-submit-note { font-size: 11px; color: rgba(247,244,239,0.28); line-height: 1.6; }
+  .cg-submit-note { font-size:12px; color: rgba(247,244,239,0.28); line-height: 1.6; }
   @media (max-width: 900px) {
     .cg-contact { grid-template-columns: 1fr; }
     .cg-contact-left { padding: 36px 28px; }
@@ -195,8 +196,8 @@
   }
 
   footer { padding: 24px 48px; background: #2A2724; border-top: 0.5px solid rgba(196,168,130,0.12); display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
-  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size:16px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
 
   /* ── HOME v2 ── */
   .hp-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
@@ -204,7 +205,7 @@
   .hp-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hp-hero-stat { position: absolute; top: 36px; left: 36px; background: #1C1A17; color: #F7F4EF; border-radius: 12px; padding: 16px 22px; }
   .hp-hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 500; line-height: 1; }
-  .hp-hero-stat-label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #C4A882; margin-top: 4px; }
+  .hp-hero-stat-label { font-size:11px; letter-spacing: .08em; text-transform: uppercase; color: #C4A882; margin-top: 4px; }
   .hp-hero-text { background: #EDE8DF; display: flex; flex-direction: column; justify-content: center; padding: 60px 48px; }
 
   .hp-who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -252,7 +253,7 @@
         <li><a onclick="showPage('contact')"  id="nav-contact">Contact</a></li>
       </ul>
       <div style="width:1px;height:20px;background:rgba(28,26,23,0.15);"></div>
-      <a href="login.html" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#8B6F47;text-decoration:none;transition:color 0.2s;white-space:nowrap;">Login</a>
+      <a href="login.html" style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#8B6F47;text-decoration:none;transition:color 0.2s;white-space:nowrap;">Login</a>
     </div>
   </nav>
 
@@ -267,7 +268,7 @@
       <div class="hp-hero-text">
         <div class="eyebrow">Food & restaurant analytics</div>
         <h1 style="font-size:38px;margin-bottom:18px;">Data that feeds<br><em>better decisions</em></h1>
-        <p style="font-size:14px;font-weight:300;line-height:1.7;color:#5C5449;max-width:340px;margin-bottom:28px;">We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
+        <p style="font-size:15px;font-weight:300;line-height:1.7;color:#5C5449;max-width:340px;margin-bottom:28px;">We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
         <div style="display:flex;gap:12px;">
           <button class="btn-primary" style="border-radius:8px;" onclick="showPage('contact')">Get a free scan</button>
           <button class="btn-ghost" style="border:1px solid #C4A882;border-radius:8px;padding:13px 26px;" onclick="showPage('services')">See how it works</button>
@@ -280,8 +281,8 @@
       <div class="hp-who-grid">
         <div>
           <div class="eyebrow">Who we work with</div>
-          <h2 style="font-size:34px;margin-bottom:16px;">Built for owners too busy to dig into <em>the numbers</em></h2>
-          <p style="font-size:14px;color:#5C5449;line-height:1.75;max-width:440px;">Most small food businesses collect data every single day — POS receipts, reviews, delivery reports — but never have time to connect the dots. We turn your existing data into one clear answer: where are you losing money, and how do you fix it.</p>
+          <h2 style="font-size:36px;margin-bottom:16px;">Built for owners too busy to dig into <em>the numbers</em></h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;max-width:440px;">Most small food businesses collect data every single day — POS receipts, reviews, delivery reports — but never have time to connect the dots. We turn your existing data into one clear answer: where are you losing money, and how do you fix it.</p>
           <div class="tags" style="margin-top:28px;">
             <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Independent cafes</span>
             <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Coffee shops</span>
@@ -302,16 +303,16 @@
         <div class="hp-step3-photo">
           <img src="images/img1.jpg" alt="Baristas working at busy cafe counter during morning rush">
           <div class="hp-step3-overlay">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#F7F4EF;line-height:1.5;">"34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays."</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#F7F4EF;line-height:1.5;">"34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays."</div>
           </div>
         </div>
         <div>
           <div class="eyebrow">Week 1–2 — analysis</div>
-          <h2 style="font-size:34px;margin-bottom:16px;">We connect <em>your data</em></h2>
-          <p style="font-size:14px;color:#5C5449;line-height:1.75;margin-bottom:24px;">With your permission we pull from your POS, loyalty program, or review platforms. We clean it, build a dashboard, and run the analysis. You don't touch anything technical.</p>
+          <h2 style="font-size:36px;margin-bottom:16px;">We connect <em>your data</em></h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;margin-bottom:24px;">With your permission we pull from your POS, loyalty program, or review platforms. We clean it, build a dashboard, and run the analysis. You don't touch anything technical.</p>
           <div style="background:#F7F4EF;border-radius:12px;padding:18px 20px;border-left:3px solid #8B6F47;">
-            <p style="font-size:13px;color:#1C1A17;line-height:1.6;">You're ordering 40 croissants every Monday. You're selling 18. That's <strong>$220 in waste</strong> every single week.</p>
-            <p style="font-size:11px;color:#8B6F47;margin-top:6px;font-style:italic;">→ Order 22 on Mondays. Check back in a month and tell us how much you saved.</p>
+            <p style="font-size:14px;color:#1C1A17;line-height:1.6;">You're ordering 40 croissants every Monday. You're selling 18. That's <strong>$220 in waste</strong> every single week.</p>
+            <p style="font-size:12px;color:#8B6F47;margin-top:6px;font-style:italic;">→ Order 22 on Mondays. Check back in a month and tell us how much you saved.</p>
           </div>
         </div>
       </div>
@@ -322,33 +323,33 @@
       <div class="hp-who-grid">
         <div>
           <div class="eyebrow">Free — always</div>
-          <h2 style="font-size:34px;margin-bottom:16px;">Start with a <em>free look</em> at your business</h2>
-          <p style="font-size:14px;color:#5C5449;line-height:1.75;max-width:420px;margin-bottom:28px;">We scan your reviews and nearest competitors and send you a one-page summary within 48 hours. No login, no payment, no commitment.</p>
+          <h2 style="font-size:36px;margin-bottom:16px;">Start with a <em>free look</em> at your business</h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;max-width:420px;margin-bottom:28px;">We scan your reviews and nearest competitors and send you a one-page summary within 48 hours. No login, no payment, no commitment.</p>
           <button class="btn-primary" style="border-radius:8px;" onclick="showPage('contact')">Get the free scan →</button>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;">
             <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
-              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Response time</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:20px;">48 hrs</div>
+              <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Response time</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">48 hrs</div>
             </div>
             <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
-              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">First step cost</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:20px;">Free</div>
+              <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">First step cost</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">Free</div>
             </div>
             <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
-              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Typical turnaround</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:20px;">2 wks</div>
+              <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Typical turnaround</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">2 wks</div>
             </div>
             <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
-              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Hackathon ranking</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:20px;">1st 2026</div>
+              <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Hackathon ranking</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">1st 2026</div>
             </div>
           </div>
         </div>
         <div class="hp-cta-photo">
           <img src="images/img3.jpg" alt="Clean artisan bakery bread display with natural light">
           <div class="hp-cta-badge">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1;color:#F7F4EF;">2 wks</div>
-            <div style="font-size:10px;color:#C4A882;text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">typical turnaround</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;color:#F7F4EF;">2 wks</div>
+            <div style="font-size:11px;color:#C4A882;text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">typical turnaround</div>
           </div>
         </div>
       </div>
@@ -456,25 +457,25 @@
 
       <div style="background:#EDE8DF;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:1px;">
         <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1C1A17;margin-bottom:4px;">All three modules together</div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:#5C5449;">Full descriptive picture of your business — sales, customers, and team in one package</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#1C1A17;margin-bottom:4px;">All three modules together</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:#5C5449;">Full descriptive picture of your business — sales, customers, and team in one package</div>
         </div>
         <div style="text-align:right;flex-shrink:0;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1C1A17;">$1,500</div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">Save $300</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1C1A17;">$1,500</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">Save $300</div>
         </div>
       </div>
 
       <!-- Monthly add-on -->
       <div style="background:#F7F4EF;padding:24px 28px;border-top:0.5px solid rgba(28,26,23,0.1);display:flex;justify-content:space-between;align-items:center;gap:24px;">
         <div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:6px;">Add-on · optional</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1C1A17;margin-bottom:4px;">Monthly insight report</div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:#5C5449;">One fresh finding every month — updated dashboard + one specific recommendation. Cancel anytime.</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:6px;">Add-on · optional</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#1C1A17;margin-bottom:4px;">Monthly insight report</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:#5C5449;">One fresh finding every month — updated dashboard + one specific recommendation. Cancel anytime.</div>
         </div>
         <div style="text-align:right;flex-shrink:0;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1C1A17;">$150<span style="font-size:16px;">/mo</span></div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">After completed project</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1C1A17;">$150<span style="font-size:17px;">/mo</span></div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">After completed project</div>
         </div>
       </div>
     </div>

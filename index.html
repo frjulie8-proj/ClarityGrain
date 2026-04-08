@@ -1,207 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ClarityGrain — Data analytics consulting for independent restaurants, cafes, and food retailers. We help small food businesses find where they're losing money.">
-  <meta name="keywords" content="food analytics, restaurant consulting, cafe data, menu optimization, food retail analytics">
-  <meta property="og:title" content="ClarityGrain — Food & Restaurant Analytics">
-  <meta property="og:description" content="We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.">
-  <meta property="og:type" content="website">
-  <title>ClarityGrain — Food & Restaurant Analytics</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ClarityGrain — Data analytics consulting for independent restaurants, cafes, and food retailers.">
+<title>ClarityGrain — Food & Restaurant Analytics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .site { font-family: 'DM Sans', sans-serif; font-weight: 300; background: #F7F4EF; color: #1C1A17; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 26px 48px; border-bottom: 0.5px solid rgba(28,26,23,0.12);
+    position: sticky; top: 0; background: #F7F4EF; z-index: 100;
+  }
+
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.04em; cursor: pointer; color: #1C1A17; }
+  .logo em { font-style: italic; font-weight: 300; color: #8B6F47; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5449; text-decoration: none; cursor: pointer; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #1C1A17; }
+
+  .page { display: none; }
+  .page.active { display: block; animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* shared */
+  .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: #8B6F47; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; display: block; width: 20px; height: 0.5px; background: #8B6F47; flex-shrink: 0; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.1; color: #1C1A17; }
+  h1 em { font-style: italic; color: #8B6F47; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #1C1A17; }
+  .divider { border: none; border-top: 0.5px solid rgba(28,26,23,0.12); margin: 0; }
+
+  /* ── HOME ── */
+  .home-hero {
+    padding: 90px 48px 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    border-bottom: 0.5px solid rgba(28,26,23,0.12);
+  }
+  .home-hero h1 { font-size: 62px; margin-bottom: 20px; }
+  .home-hero p { font-size: 15px; font-weight: 300; line-height: 1.8; color: #5C5449; max-width: 400px; margin-bottom: 36px; }
+  .hero-cta { display: flex; gap: 16px; align-items: center; }
+
+  .btn-primary { background: #1C1A17; color: #F7F4EF; border: none; padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .btn-primary:hover { background: #3A3530; }
+  .btn-ghost { background: transparent; border: none; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 0; }
+  .btn-ghost::after { content: '→'; }
+
+  .hero-right { display: flex; flex-direction: column; gap: 10px; }
+  .stat-card { background: #EDE8DF; padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .stat-card.dark { background: #1C1A17; }
+  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #1C1A17; line-height: 1; }
+  .stat-card.dark .stat-val { color: #F7F4EF; }
+  .stat-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.07em; text-transform: uppercase; color: #8B6F47; text-align: right; max-width: 130px; line-height: 1.5; }
+  .stat-card.dark .stat-label { color: #6B5D4F; }
+
+  .home-who { padding: 72px 48px; display: grid; grid-template-columns: 180px 1fr; gap: 80px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
+  .who-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 8px; }
+  .who-headline { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; line-height: 1.35; color: #1C1A17; margin-bottom: 16px; }
+  .who-text { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #5C5449; margin-bottom: 28px; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag { background: #EDE8DF; padding: 7px 14px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.06em; color: #5C5449; }
+
+  .home-preview { padding: 72px 48px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
+  .home-preview h2 { margin-bottom: 40px; }
+  .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
+  .preview-card { background: #F7F4EF; padding: 32px 28px; cursor: pointer; transition: background 0.2s; }
+  .preview-card:hover { background: #EDE8DF; }
+  .preview-tier { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .preview-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.3; margin-bottom: 10px; }
+  .preview-desc { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 16px; }
+  .preview-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #1C1A17; }
+
+  .home-cta { padding: 72px 48px; background: #1C1A17; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .home-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #F7F4EF; line-height: 1.2; }
+  .home-cta h2 em { font-style: italic; color: #C4A882; }
+  .home-cta p { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6B5D4F; margin-top: 14px; line-height: 1.75; }
+  .btn-warm { background: #8B6F47; color: #F7F4EF; border: none; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .btn-warm:hover { background: #A07D52; }
+
+  /* ── SERVICES ── */
+  .page-hero { padding: 72px 48px 56px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
+
+  /* Tier cards */
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); margin: 0; }
+
+  .tier-card { background: #F7F4EF; padding: 40px 32px; display: flex; flex-direction: column; gap: 0; }
+  .tier-card.featured { background: #1C1A17; }
+
+  .tier-badge { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 8px; }
+  .tier-card.featured .tier-badge { color: #C4A882; }
+
+  .tier-question { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.25; margin-bottom: 6px; }
+  .tier-card.featured .tier-question { color: #F7F4EF; }
+
+  .tier-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 20px; }
+  .tier-card.featured .tier-name { color: #6B5D4F; }
+
+  .tier-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #1C1A17; line-height: 1; margin-bottom: 4px; }
+  .tier-card.featured .tier-price { color: #F7F4EF; }
+
+  .tier-price-note { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #8B6F47; margin-bottom: 24px; }
+  .tier-card.featured .tier-price-note { color: #6B5D4F; }
+
+  .tier-divider { height: 0.5px; background: rgba(28,26,23,0.1); margin-bottom: 24px; }
+  .tier-card.featured .tier-divider { background: rgba(247,244,239,0.08); }
+
+  .tier-includes { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 14px; }
+  .tier-card.featured .tier-includes { color: #6B5D4F; }
+
+  .tier-items { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+  .tier-item { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.5; display: flex; gap: 10px; }
+  .tier-card.featured .tier-item { color: #8B7D6B; }
+  .tier-item::before { content: '—'; color: #C4A882; flex-shrink: 0; }
+
+  .tier-btn { background: transparent; border: 0.5px solid rgba(28,26,23,0.25); color: #1C1A17; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.2s; margin-top: auto; }
+  .tier-btn:hover { background: #EDE8DF; border-color: rgba(28,26,23,0.4); }
+  .tier-card.featured .tier-btn { border-color: rgba(196,168,130,0.4); color: #C4A882; }
+  .tier-card.featured .tier-btn:hover { background: rgba(196,168,130,0.08); border-color: rgba(196,168,130,0.7); color: #F7F4EF; }
+
+  /* Paid menu */
+  .menu-section { padding: 64px 48px; border-top: 0.5px solid rgba(28,26,23,0.12); border-bottom: 0.5px solid rgba(28,26,23,0.12); }
+  .menu-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 40px; align-items: end; }
+  .menu-header h2 { font-size: 28px; }
+  .menu-note { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
+  .menu-item { background: #F7F4EF; padding: 28px 24px; cursor: pointer; transition: background 0.2s; }
+  .menu-item:hover { background: #F0EBE3; }
+  .menu-item-icon { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 10px; }
+  .menu-item-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; line-height: 1.2; }
+  .menu-item-desc { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; color: #5C5449; line-height: 1.65; margin-bottom: 14px; }
+  .menu-item-price { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: #8B6F47; text-transform: uppercase; }
+
+  .svc-cta { padding: 56px 48px; background: #EDE8DF; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+  .svc-cta h2 { font-size: 26px; font-weight: 300; margin-bottom: 6px; }
+  .svc-cta p { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; }
+
+  /* ── APPROACH ── */
+  .approach-intro { padding: 64px 48px; display: grid; grid-template-columns: 160px 1fr; gap: 80px; border-bottom: 0.5px solid rgba(28,26,23,0.12); }
+  .approach-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; padding-top: 6px; }
+  .approach-intro p { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.85; color: #5C5449; }
+  .steps { border-top: 0.5px solid rgba(28,26,23,0.12); }
+  .step-row { display: grid; grid-template-columns: 48px 1fr 1fr; gap: 48px; padding: 48px; border-bottom: 0.5px solid rgba(28,26,23,0.12); align-items: start; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: rgba(28,26,23,0.1); line-height: 1; }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: #1C1A17; margin-bottom: 8px; }
+  .step-time { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .step-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.75; }
+  .step-quote { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; font-style: italic; color: #8B6F47; line-height: 1.7; border-left: 1px solid #C4A882; padding-left: 16px; margin-top: 8px; }
+  .values-section { padding: 64px 48px; }
+  .values-section h2 { margin-bottom: 36px; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); }
+  .value-item { background: #F7F4EF; padding: 32px 28px; }
+  .value-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #1C1A17; margin-bottom: 10px; }
+  .value-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+  .contact-left { padding: 64px 48px; border-right: 0.5px solid rgba(28,26,23,0.12); display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+  .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #1C1A17; line-height: 1.25; margin-bottom: 14px; }
+  .contact-left h2 em { font-style: italic; color: #8B6F47; }
+  .contact-left-desc { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #5C5449; }
+  .contact-details { display: flex; flex-direction: column; gap: 18px; }
+  .contact-detail-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 4px; }
+  .contact-detail-val { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #1C1A17; }
+  .contact-right { padding: 64px 48px; background: #1C1A17; }
+  .form-section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 36px; }
+  .form { display: flex; flex-direction: column; }
+  .form-group { margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .form-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 10px; }
+  .form-input { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; transition: border-color 0.2s; }
+  .form-input:focus { border-bottom-color: #C4A882; }
+  .form-input::placeholder { color: #5C5449; }
+  .form-textarea { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; resize: none; height: 72px; }
+  .form-textarea::placeholder { color: #5C5449; }
+  .form-btn { background: transparent; color: #C4A882; border: 0.5px solid rgba(196,168,130,0.45); padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; margin-top: 8px; align-self: flex-start; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .form-btn:hover { background: rgba(196,168,130,0.1); color: #F7F4EF; border-color: rgba(196,168,130,0.7); }
+  .form-note { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #4A4540; margin-top: 14px; line-height: 1.65; }
+
+  footer { padding: 24px 48px; background: #2A2724; border-top: 0.5px solid rgba(196,168,130,0.12); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
+</style>
 </head>
 <body>
-
+<div class="site">
   <nav>
-    <div class="logo" onclick="showPage('services')" role="button" tabindex="0" aria-label="ClarityGrain home">
-      Clarity<em>Grain</em>
-    </div>
-    <ul class="nav-links" role="navigation" aria-label="Main navigation">
-      <li><a onclick="showPage('services')" id="nav-services" role="button" tabindex="0">Services</a></li>
-      <li><a onclick="showPage('approach')" id="nav-approach" role="button" tabindex="0">Approach</a></li>
-      <li><a onclick="showPage('contact')"  id="nav-contact"  role="button" tabindex="0">Contact</a></li>
+    <div class="logo" onclick="showPage('home')">Clarity<em>Grain</em></div>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')"     id="nav-home">Home</a></li>
+      <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+      <li><a onclick="showPage('approach')" id="nav-approach">Approach</a></li>
+      <li><a onclick="showPage('contact')"  id="nav-contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- ── SERVICES PAGE ── -->
-  <main class="page" id="page-services" role="main">
+  <!-- ══ HOME ══ -->
+  <div class="page" id="page-home">
 
-    <header class="page-hero">
-      <div class="page-eyebrow">What we offer</div>
-      <h1>Simple services,<br><em>clear outcomes</em></h1>
-    </header>
-
-    <section class="services-intro" aria-label="Overview">
-      <p>Every engagement starts with your data — POS exports, review platforms, delivery app reports. We clean it, connect it, and surface the one thing that matters most to your business right now.</p>
-      <div class="intro-stats">
-        <div class="intro-stat">
-          <div class="intro-stat-val">Free</div>
-          <div class="intro-stat-desc">Every relationship starts with a no-commitment audit — no invoice, no pitch</div>
-        </div>
-        <div class="intro-stat">
-          <div class="intro-stat-val">Fixed</div>
-          <div class="intro-stat-desc">Project pricing agreed upfront — no hourly surprises or scope creep</div>
-        </div>
-        <div class="intro-stat">
-          <div class="intro-stat-val">Fast</div>
-          <div class="intro-stat-desc">Most projects delivered within two weeks of receiving your data</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-list" aria-label="Services">
-      <article class="service-row">
-        <div class="svc-num">01</div>
-        <div>
-          <h2 class="svc-name">Free review audit</h2>
-          <div class="svc-tags">
-            <span class="svc-tag">Yelp</span>
-            <span class="svc-tag">Google</span>
-            <span class="svc-tag">No data access needed</span>
-          </div>
-        </div>
-        <p class="svc-desc">We analyze your public reviews to find patterns — what hours, what dishes, what interactions are driving 1-star ratings. Delivered as a clean one-page PDF within 48 hours. No login access needed, no commitment required.</p>
-        <div>
-          <div class="svc-price">Free</div>
-          <div class="svc-price-note">Always</div>
-        </div>
-      </article>
-
-      <article class="service-row">
-        <div class="svc-num">02</div>
-        <div>
-          <h2 class="svc-name">Sales &amp; waste analysis</h2>
-          <div class="svc-tags">
-            <span class="svc-tag">Square</span>
-            <span class="svc-tag">Toast</span>
-            <span class="svc-tag">Clover</span>
-          </div>
-        </div>
-        <p class="svc-desc">We connect your POS data to identify your most and least profitable items, your peak hours, and where food waste is quietly eating your margins. Delivered as a mobile-friendly dashboard plus a one-page summary with one clear action to take.</p>
-        <div>
-          <div class="svc-price">$600</div>
-          <div class="svc-price-note">Fixed — one time</div>
-        </div>
-      </article>
-
-      <article class="service-row">
-        <div class="svc-num">03</div>
-        <div>
-          <h2 class="svc-name">Market research report</h2>
-          <div class="svc-tags">
-            <span class="svc-tag">Competitive analysis</span>
-            <span class="svc-tag">Consumer trends</span>
-          </div>
-        </div>
-        <p class="svc-desc">A structured report on your local market — who your competitors are, what gaps exist, and where your business is positioned. Useful before a menu change, a price increase, or a new location decision.</p>
-        <div>
-          <div class="svc-price">$800</div>
-          <div class="svc-price-note">Fixed — one time</div>
-        </div>
-      </article>
-
-      <article class="service-row">
-        <div class="svc-num">04</div>
-        <div>
-          <h2 class="svc-name">Monthly insight report</h2>
-          <div class="svc-tags">
-            <span class="svc-tag">Ongoing</span>
-            <span class="svc-tag">Cancel anytime</span>
-          </div>
-        </div>
-        <p class="svc-desc">One finding every month — an updated dashboard and one specific recommendation tied to your actual numbers. No jargon, no bloat. Designed for owners who want to stay on top of their data without spending hours on it.</p>
-        <div>
-          <div class="svc-price">$150</div>
-          <div class="svc-price-note">Per month</div>
-        </div>
-      </article>
-    </section>
-
-    <div class="services-cta">
+    <section class="home-hero">
       <div>
-        <h2 class="cta-heading">Not sure which fits you?</h2>
-        <p>Start with the free audit. We'll recommend what makes sense from there.</p>
+        <div class="eyebrow">Food & Restaurant Analytics</div>
+        <h1>Data that feeds<br><em>better decisions</em></h1>
+        <p>We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('contact')">Get a free scan</button>
+          <button class="btn-ghost" onclick="showPage('services')">See how it works</button>
+        </div>
       </div>
-      <button class="btn-primary" onclick="showPage('contact')" aria-label="Get the free audit">Get the free audit →</button>
+      <div class="hero-right">
+        <div class="stat-card dark">
+          <div class="stat-val">$180</div>
+          <div class="stat-label">avg. monthly savings per client</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">2 wks</div>
+          <div class="stat-label">typical project turnaround</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">1st</div>
+          <div class="stat-label">analytics hackathon 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-who">
+      <div class="who-label">Who we work with</div>
+      <div>
+        <div class="who-headline">Built for owners who are too busy to dig into the numbers themselves</div>
+        <p class="who-text">Most small food businesses collect data every single day — POS receipts, reviews, delivery reports — but never have time to connect the dots. We turn your existing data into one clear answer: where are you losing money, and how do you fix it.</p>
+        <div class="tags">
+          <span class="tag">Independent cafes</span>
+          <span class="tag">Coffee shops</span>
+          <span class="tag">Restaurants</span>
+          <span class="tag">Food retail</span>
+          <span class="tag">1–5 locations</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-preview">
+      <h2 style="margin-bottom:40px;">Three questions. Three levels of help.</h2>
+      <div class="preview-grid">
+        <div class="preview-card" onclick="showPage('services')">
+          <div class="preview-tier">Free scan</div>
+          <div class="preview-q">"What's happening around me?"</div>
+          <p class="preview-desc">A quick look at your reviews and your top competitors. What are customers saying? Who's winning nearby — and why?</p>
+          <div class="preview-price">Free</div>
+        </div>
+        <div class="preview-card" onclick="showPage('services')">
+          <div class="preview-tier">Descriptive — you choose</div>
+          <div class="preview-q">"What's happening inside my business?"</div>
+          <p class="preview-desc">Pick the analysis that fits — sales & waste, loyalty program, staff performance, or all three. Delivered as a dashboard you can check on your phone.</p>
+          <div class="preview-price">From $600</div>
+        </div>
+        <div class="preview-card" onclick="showPage('services')">
+          <div class="preview-tier">Predictive pro</div>
+          <div class="preview-q">"What's about to happen — and what should I do?"</div>
+          <p class="preview-desc">Demand forecasting and scenario simulation. What if you raise prices 10%? What will next month look like? Know before it happens.</p>
+          <div class="preview-price">From $1,200</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-cta">
+      <div>
+        <h2>Start with a<br><em>free look</em><br>at your business</h2>
+        <p>We scan your reviews and nearest competitors and send you a one-page summary within 48 hours. No login, no payment, no commitment.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+        <button class="btn-warm" onclick="showPage('contact')">Get the free scan</button>
+        <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:#4A4540;">Takes 2 minutes to request</span>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <div class="page" id="page-services">
+
+    <div class="page-hero">
+      <div class="eyebrow">What we offer</div>
+      <h1>Three levels.<br><em>One clear answer</em> each time.</h1>
     </div>
 
-  </main>
+    <!-- Tier overview -->
+    <div class="tiers">
 
-  <!-- ── APPROACH PAGE ── -->
-  <main class="page" id="page-approach" role="main">
+      <div class="tier-card">
+        <div class="tier-badge">Free — always</div>
+        <div class="tier-question">"What's happening around me?"</div>
+        <div class="tier-name">Quick scan</div>
+        <div class="tier-price">Free</div>
+        <div class="tier-price-note">No commitment</div>
+        <div class="tier-divider"></div>
+        <div class="tier-includes">What you get</div>
+        <ul class="tier-items">
+          <li class="tier-item">Google & Yelp review summary — patterns, recurring complaints, what's driving your rating</li>
+          <li class="tier-item">Quick competitor comparison — who's winning nearby and what they're doing differently</li>
+          <li class="tier-item">One-page PDF delivered within 48 hours</li>
+          <li class="tier-item">No login access, no data sharing needed</li>
+        </ul>
+        <button class="tier-btn" onclick="showPage('contact')">Request free scan</button>
+      </div>
 
-    <header class="page-hero">
-      <div class="page-eyebrow">How we work</div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Paid — pick what you need</div>
+        <div class="tier-question">"What's happening inside my business?"</div>
+        <div class="tier-name">Descriptive analysis</div>
+        <div class="tier-price">$600+</div>
+        <div class="tier-price-note">Fixed — one time · you choose the modules</div>
+        <div class="tier-divider"></div>
+        <div class="tier-includes">Choose your modules below</div>
+        <ul class="tier-items">
+          <li class="tier-item">Sales & waste — your best and worst items, peak hours, weekly waste cost</li>
+          <li class="tier-item">Loyalty program — who your regulars are, how often they return, what keeps them coming back</li>
+          <li class="tier-item">Staff performance — which shifts underperform, where service breaks, how to fix it</li>
+          <li class="tier-item">Mobile-friendly dashboard + one clear action per module</li>
+        </ul>
+        <button class="tier-btn" onclick="showPage('contact')">Start a project</button>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-badge">Paid pro</div>
+        <div class="tier-question">"What's about to happen — and what should I do?"</div>
+        <div class="tier-name">Predictive analysis</div>
+        <div class="tier-price">$1,200+</div>
+        <div class="tier-price-note">Fixed — requires descriptive baseline first</div>
+        <div class="tier-divider"></div>
+        <div class="tier-includes">What you get</div>
+        <ul class="tier-items">
+          <li class="tier-item">Demand forecasting — what next month looks like based on your trends and seasonality</li>
+          <li class="tier-item">Scenario simulation — what if I raise prices 10%? Cut Monday hours? Add a new menu item?</li>
+          <li class="tier-item">Risk flags — weeks or items likely to underperform before they do</li>
+          <li class="tier-item">Requires a completed descriptive project as the data foundation</li>
+        </ul>
+        <button class="tier-btn" onclick="showPage('contact')">Ask about Pro</button>
+      </div>
+
+    </div>
+
+    <!-- Paid module menu -->
+    <div class="menu-section">
+      <div class="menu-header">
+        <h2>Build your own<br>descriptive package</h2>
+        <p class="menu-note">The descriptive tier is modular — pick the analysis that actually applies to your business. Each module is priced separately. Most clients start with one and add more after seeing results.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-icon">Module A</div>
+          <div class="menu-item-name">Sales & waste analysis</div>
+          <p class="menu-item-desc">Connect your POS (Square, Toast, Clover) to find your most and least profitable items, your real peak hours, and where food waste is quietly eating your margins every week.</p>
+          <div class="menu-item-price">$600 — fixed</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-icon">Module B</div>
+          <div class="menu-item-name">Loyalty program analysis</div>
+          <p class="menu-item-desc">If you have a loyalty or rewards program, we dig into who your regulars really are, how often they return, what they spend, and what's stopping more customers from coming back.</p>
+          <div class="menu-item-price">$600 — fixed</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-icon">Module C</div>
+          <div class="menu-item-name">Staff performance tracking</div>
+          <p class="menu-item-desc">Using your POS and review data, we map which shifts, stations, and team members are driving your best — and worst — customer experiences. No guessing, no confrontation.</p>
+          <div class="menu-item-price">$600 — fixed</div>
+        </div>
+      </div>
+
+      <div style="background:#EDE8DF;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:1px;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1C1A17;margin-bottom:4px;">All three modules together</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:#5C5449;">Full descriptive picture of your business — sales, customers, and team in one package</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1C1A17;">$1,500</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">Save $300</div>
+        </div>
+      </div>
+
+      <!-- Monthly add-on -->
+      <div style="background:#F7F4EF;padding:24px 28px;border-top:0.5px solid rgba(28,26,23,0.1);display:flex;justify-content:space-between;align-items:center;gap:24px;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#8B6F47;margin-bottom:6px;">Add-on · optional</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1C1A17;margin-bottom:4px;">Monthly insight report</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:#5C5449;">One fresh finding every month — updated dashboard + one specific recommendation. Cancel anytime.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1C1A17;">$150<span style="font-size:16px;">/mo</span></div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#8B6F47;text-transform:uppercase;letter-spacing:0.08em;">After completed project</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-cta">
+      <div>
+        <h2>Not sure where to start?</h2>
+        <p>Request the free scan. We'll look at your reviews and tell you which module makes the most sense for where you are right now.</p>
+      </div>
+      <button class="btn-primary" onclick="showPage('contact')">Get the free scan →</button>
+    </div>
+
+  </div>
+
+  <!-- ══ APPROACH ══ -->
+  <div class="page" id="page-approach">
+    <div class="page-hero">
+      <div class="eyebrow">How we work</div>
       <h1>No jargon.<br><em>No guesswork.</em></h1>
-    </header>
-
-    <section class="approach-intro" aria-label="Philosophy">
+    </div>
+    <div class="approach-intro">
       <div class="approach-label">Our philosophy</div>
-      <p>Small food businesses don't need enterprise analytics — they need one clear answer to one real problem. Every engagement starts with listening, not pitching. We figure out where the pain is, find the data that speaks to it, and hand you something actionable.</p>
-    </section>
-
-    <section class="steps" aria-label="Our process">
-      <article class="step-row">
+      <p>Small food businesses don't need enterprise analytics — they need one clear answer to one real problem. Every engagement starts with listening, not pitching. We find where the pain is, connect the data that speaks to it, and hand you something actionable — not a 40-slide deck you'll never open again.</p>
+    </div>
+    <div class="steps">
+      <div class="step-row">
         <div class="step-num">01</div>
         <div>
           <div class="step-time">Day 1 — free</div>
-          <h2 class="step-title">We look at your reviews</h2>
-          <p class="step-desc">Before we ask for anything, we analyze your public Yelp and Google reviews and send you a one-page summary of what we found. No login access, no contract, no cost.</p>
+          <div class="step-title">We look at your reviews</div>
+          <p class="step-desc">Before we ask for anything, we scan your public Yelp and Google reviews and do a quick competitor comparison. We send you a one-page summary — no login, no contract, no cost.</p>
         </div>
-        <blockquote class="step-quote">34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays.</blockquote>
-      </article>
-
-      <article class="step-row">
+        <div class="step-quote">34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays.</div>
+      </div>
+      <div class="step-row">
         <div class="step-num">02</div>
         <div>
           <div class="step-time">Week 1 — discovery</div>
-          <h2 class="step-title">We listen before we build</h2>
-          <p class="step-desc">A 30-minute conversation in your space. We ask about your POS system, your busiest hours, what's been worrying you. We don't pitch. We take notes and figure out where data can actually help.</p>
+          <div class="step-title">We listen before we build</div>
+          <p class="step-desc">A 30-minute conversation in your space. We ask about your POS, your biggest worries, what you wish you knew. We don't pitch. We figure out which module actually solves your problem.</p>
         </div>
-        <blockquote class="step-quote">Tell me about the days when things feel off. What does a bad Tuesday look like for you?</blockquote>
-      </article>
-
-      <article class="step-row">
+        <div class="step-quote">Tell me about the days when things feel off. What does a bad Tuesday look like for you?</div>
+      </div>
+      <div class="step-row">
         <div class="step-num">03</div>
         <div>
           <div class="step-time">Week 1–2 — analysis</div>
-          <h2 class="step-title">We connect your data</h2>
-          <p class="step-desc">With your permission we pull your POS data and clean it. We build a simple dashboard and run the analysis. You don't need to do anything technical.</p>
+          <div class="step-title">We connect your data</div>
+          <p class="step-desc">With your permission we pull from your POS, loyalty program, or review platforms. We clean it, build a dashboard, and run the analysis. You don't touch anything technical.</p>
         </div>
-        <blockquote class="step-quote">You're ordering 40 croissants every Monday. You're selling 18 on average. That's $220 in waste every single week.</blockquote>
-      </article>
-
-      <article class="step-row">
+        <div class="step-quote">You're ordering 40 croissants every Monday. You're selling 18. That's $220 in waste every single week.</div>
+      </div>
+      <div class="step-row">
         <div class="step-num">04</div>
         <div>
           <div class="step-time">Week 2 — delivery</div>
-          <h2 class="step-title">One clear recommendation</h2>
+          <div class="step-title">One clear recommendation</div>
           <p class="step-desc">A dashboard link you can open on your phone and a one-page summary with one specific action. Not ten suggestions — one. The thing most likely to save you money in the next 30 days.</p>
         </div>
-        <blockquote class="step-quote">Order 22 croissants on Mondays. Check back in a month and tell us how much you saved.</blockquote>
-      </article>
-
-      <article class="step-row">
+        <div class="step-quote">Order 22 croissants on Mondays. Check back in a month and tell us how much you saved.</div>
+      </div>
+      <div class="step-row">
         <div class="step-num">05</div>
         <div>
           <div class="step-time">Month 2 onward — optional</div>
-          <h2 class="step-title">We keep finding things</h2>
+          <div class="step-title">We keep finding things</div>
           <p class="step-desc">If the first insight saved you money, we can keep looking once a month for $150. If it didn't, you owe nothing beyond the original fee.</p>
         </div>
-        <blockquote class="step-quote">You saved $180 last month. What if I found you one more thing like that, every month, for $150?</blockquote>
-      </article>
-    </section>
-
-    <section class="values-section" aria-label="Values">
+        <div class="step-quote">You saved $180 last month. What if I found you one more thing like that, every month, for $150?</div>
+      </div>
+    </div>
+    <div class="values-section">
       <h2>What we believe</h2>
       <div class="values-grid">
         <div class="value-item">
           <div class="value-name">Specificity over volume</div>
-          <p class="value-desc">One finding that applies to your Tuesday is worth more than ten generic best practices from an industry report.</p>
+          <p class="value-desc">One finding about your Tuesday is worth more than ten generic best practices from an industry report.</p>
         </div>
         <div class="value-item">
           <div class="value-name">Price that makes sense</div>
@@ -209,26 +478,23 @@
         </div>
         <div class="value-item">
           <div class="value-name">No commitment to start</div>
-          <p class="value-desc">Every relationship begins with a free audit. You decide if it's worth continuing — not the other way around.</p>
+          <p class="value-desc">Every relationship begins with a free scan. You decide if it's worth continuing — not the other way around.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-  </main>
-
-  <!-- ── CONTACT PAGE ── -->
-  <main class="page" id="page-contact" role="main">
-
-    <header class="page-hero">
-      <div class="page-eyebrow">Get in touch</div>
+  <!-- ══ CONTACT ══ -->
+  <div class="page" id="page-contact">
+    <div class="page-hero">
+      <div class="eyebrow">Get in touch</div>
       <h1>Start with<br><em>a free look</em></h1>
-    </header>
-
+    </div>
     <div class="contact-layout">
-      <section class="contact-left" aria-label="Contact information">
+      <div class="contact-left">
         <div>
-          <h2 class="contact-heading">We review your data.<br><em>You decide</em> what comes next.</h2>
-          <p class="contact-left-desc">Send us your business name and email. We'll look at your public reviews within 48 hours and send you a one-page summary — at no cost, with no obligation.</p>
+          <h2>We review your data.<br><em>You decide</em> what comes next.</h2>
+          <p class="contact-left-desc" style="margin-top:14px;">Send us your business name and email. We'll scan your public reviews and nearest competitors within 48 hours and send you a one-page summary — at no cost, no obligation.</p>
         </div>
         <div class="contact-details">
           <div>
@@ -248,48 +514,55 @@
             <div class="contact-detail-val">Restaurants, cafes, coffee shops, food retail</div>
           </div>
         </div>
-      </section>
-
-      <section class="contact-right" aria-label="Contact form">
+      </div>
+      <div class="contact-right">
         <span class="form-section-label">Send us a message</span>
-        <!-- Replace action with your Formspree endpoint: https://formspree.io -->
-        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="form">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="name">Your name</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Maria" required autocomplete="name">
+              <label class="form-label">Your name</label>
+              <input class="form-input" type="text" placeholder="Maria">
             </div>
             <div class="form-group">
-              <label class="form-label" for="business">Business name</label>
-              <input class="form-input" type="text" id="business" name="business" placeholder="The Corner Cafe" required>
+              <label class="form-label">Business name</label>
+              <input class="form-input" type="text" placeholder="The Corner Cafe">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="email">Email address</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="maria@thecornercafe.com" required autocomplete="email">
+            <label class="form-label">Email address</label>
+            <input class="form-input" type="email" placeholder="maria@thecornercafe.com">
           </div>
           <div class="form-group">
-            <label class="form-label" for="type">Type of business</label>
-            <input class="form-input" type="text" id="type" name="business_type" placeholder="Coffee shop, restaurant, food retail...">
+            <label class="form-label">Type of business</label>
+            <input class="form-input" type="text" placeholder="Coffee shop, restaurant, food retail...">
           </div>
           <div class="form-group">
-            <label class="form-label" for="challenge">Your biggest challenge right now</label>
-            <textarea class="form-textarea" id="challenge" name="challenge" placeholder="Rising food costs, slow Tuesdays, bad reviews..."></textarea>
+            <label class="form-label">Your biggest challenge right now</label>
+            <textarea class="form-textarea" placeholder="Rising food costs, slow Tuesdays, bad reviews..."></textarea>
           </div>
-          <button class="form-btn" type="submit">Get in touch</button>
-          <p class="form-note">We'll review your public reviews and send you a one-page summary within 48 hours. No invoice, no follow-up pitch.</p>
-        </form>
-      </section>
+          <button class="form-btn">Get in touch</button>
+          <p class="form-note">We'll review your public data and send you a one-page summary within 48 hours. No invoice, no follow-up pitch.</p>
+        </div>
+      </div>
     </div>
-
-  </main>
+  </div>
 
   <footer>
     <div class="footer-logo">ClarityGrain LLC</div>
     <div class="footer-copy">© 2026 ClarityGrain LLC</div>
   </footer>
+</div>
 
-  <script src="js/main.js"></script>
-
+<script>
+  function showPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    const navEl = document.getElementById('nav-' + page);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  showPage('home');
+</script>
 </body>
 </html>

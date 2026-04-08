@@ -187,6 +187,21 @@
   footer { padding: 24px 48px; background: #2A2724; border-top: 0.5px solid rgba(196,168,130,0.12); display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
   .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
+
+  /* Dashboard embed */
+  .dashboard-embed {
+    margin: 2.5rem 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #C4A882;
+  }
+  .dashboard-embed--compact {
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 768px) {
+    .dashboard-embed iframe { min-width: 820px; height: 560px; }
+    .dashboard-embed { overflow-x: auto; }
+  }
 </style>
 </head>
 <body>
@@ -258,6 +273,9 @@
           <div class="preview-tier">Descriptive — you choose</div>
           <div class="preview-q">"What's happening inside my business?"</div>
           <p class="preview-desc">Pick the analysis that fits — sales & waste, loyalty program, staff performance, or all three. Delivered as a dashboard you can check on your phone.</p>
+          <div class="dashboard-embed dashboard-embed--compact">
+            <iframe src="dashboard-mockup.html" width="100%" height="480" style="display:block; border:none; border-radius:14px;" title="ClarityGrain — dashboard preview"></iframe>
+          </div>
           <div class="preview-price">From $600</div>
         </div>
         <div class="preview-card" onclick="showPage('services')">
@@ -445,6 +463,9 @@
           <p class="step-desc">With your permission we pull from your POS, loyalty program, or review platforms. We clean it, build a dashboard, and run the analysis. You don't touch anything technical.</p>
         </div>
         <div class="step-quote">You're ordering 40 croissants every Monday. You're selling 18. That's $220 in waste every single week.</div>
+        <div class="dashboard-embed">
+          <iframe src="dashboard-mockup.html" width="100%" height="620" style="display:block; border:none; border-radius:14px;" title="ClarityGrain — example dashboard"></iframe>
+        </div>
       </div>
       <div class="step-row">
         <div class="step-num">04</div>

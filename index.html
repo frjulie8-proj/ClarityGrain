@@ -188,6 +188,32 @@
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
   .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
 
+  /* ── HOME v2 ── */
+  .hp-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
+  .hp-hero-photo { position: relative; overflow: hidden; }
+  .hp-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hp-hero-stat { position: absolute; top: 36px; left: 36px; background: #1C1A17; color: #F7F4EF; border-radius: 12px; padding: 16px 22px; }
+  .hp-hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 500; line-height: 1; }
+  .hp-hero-stat-label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #C4A882; margin-top: 4px; }
+  .hp-hero-text { background: #EDE8DF; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; }
+
+  .hp-who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hp-photo-box { border-radius: 16px; overflow: hidden; height: 480px; }
+  .hp-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+  .hp-step3-photo { border-radius: 16px; overflow: hidden; height: 460px; position: relative; }
+  .hp-step3-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hp-step3-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(28,26,23,0.82)); padding: 32px 28px 28px; border-radius: 0 0 16px 16px; }
+
+  .hp-cta-photo { border-radius: 16px; overflow: hidden; height: 460px; position: relative; }
+  .hp-cta-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hp-cta-badge { position: absolute; bottom: 28px; right: 28px; background: #1C1A17; border-radius: 10px; padding: 14px 20px; text-align: right; }
+
+  @media (max-width: 900px) {
+    .hp-hero { grid-template-columns: 1fr; }
+    .hp-who-grid { grid-template-columns: 1fr; }
+  }
+
   /* Dashboard embed */
   .dashboard-embed {
     margin: 2.5rem 0;
@@ -219,79 +245,102 @@
   <!-- ══ HOME ══ -->
   <div class="page" id="page-home">
 
-    <section class="home-hero">
-      <div>
-        <div class="eyebrow">Food & Restaurant Analytics</div>
-        <h1>Data that feeds<br><em>better decisions</em></h1>
-        <p>We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
-        <div class="hero-cta">
-          <button class="btn-primary" onclick="showPage('contact')">Get a free scan</button>
-          <button class="btn-ghost" onclick="showPage('services')">See how it works</button>
+    <!-- HERO -->
+    <div class="hp-hero">
+      <div class="hp-hero-photo">
+        <img src="images/img4.jpg" alt="Warm independent cafe interior with arched shelves and pastry display">
+        <div class="hp-hero-stat">
+          <div class="hp-hero-stat-num">$180</div>
+          <div class="hp-hero-stat-label">avg. monthly savings per client</div>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="stat-card dark">
-          <div class="stat-val">$180</div>
-          <div class="stat-label">avg. monthly savings per client</div>
+      <div class="hp-hero-text">
+        <div class="eyebrow">Food & restaurant analytics</div>
+        <h1 style="font-size:62px;margin-bottom:24px;">Data that feeds<br><em>better<br>decisions</em></h1>
+        <p style="font-size:15px;font-weight:300;line-height:1.7;color:#5C5449;max-width:360px;margin-bottom:36px;">We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
+        <div style="display:flex;gap:12px;">
+          <button class="btn-primary" style="border-radius:8px;" onclick="showPage('contact')">Get a free scan</button>
+          <button class="btn-ghost" style="border:1px solid #C4A882;border-radius:8px;padding:13px 26px;" onclick="showPage('services')">See how it works</button>
         </div>
-        <div class="stat-card">
-          <div class="stat-val">2 wks</div>
-          <div class="stat-label">typical project turnaround</div>
+      </div>
+    </div>
+
+    <!-- WHO WE WORK WITH -->
+    <section style="padding:100px 48px;">
+      <div class="hp-who-grid">
+        <div>
+          <div class="eyebrow">Who we work with</div>
+          <h2 style="font-size:46px;margin-bottom:20px;">Built for owners too busy to dig into <em>the numbers</em></h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;max-width:440px;">Most small food businesses collect data every single day — POS receipts, reviews, delivery reports — but never have time to connect the dots. We turn your existing data into one clear answer: where are you losing money, and how do you fix it.</p>
+          <div class="tags" style="margin-top:28px;">
+            <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Independent cafes</span>
+            <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Coffee shops</span>
+            <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Restaurants</span>
+            <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">Food retail</span>
+            <span class="tag" style="border-radius:20px;border:1px solid #C4A882;background:transparent;">1–5 locations</span>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-val">1st</div>
-          <div class="stat-label">analytics hackathon 2026</div>
+        <div class="hp-photo-box">
+          <img src="images/img2.jpg" alt="Bakery counter with full menu board and pastry display">
         </div>
       </div>
     </section>
 
-    <section class="home-who">
-      <div class="who-label">Who we work with</div>
-      <div>
-        <div class="who-headline">Built for owners who are too busy to dig into the numbers themselves</div>
-        <p class="who-text">Most small food businesses collect data every single day — POS receipts, reviews, delivery reports — but never have time to connect the dots. We turn your existing data into one clear answer: where are you losing money, and how do you fix it.</p>
-        <div class="tags">
-          <span class="tag">Independent cafes</span>
-          <span class="tag">Coffee shops</span>
-          <span class="tag">Restaurants</span>
-          <span class="tag">Food retail</span>
-          <span class="tag">1–5 locations</span>
+    <!-- STEP 03 — We connect your data -->
+    <section style="padding:100px 48px;background:#EDE8DF;">
+      <div class="hp-who-grid">
+        <div class="hp-step3-photo">
+          <img src="images/img1.jpg" alt="Baristas working at busy cafe counter during morning rush">
+          <div class="hp-step3-overlay">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#F7F4EF;line-height:1.5;">"34% of your 1-star reviews mention wait times — all clustering between 8–9am on weekdays."</div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">Week 1–2 — analysis</div>
+          <h2 style="font-size:40px;margin-bottom:16px;">We connect <em>your data</em></h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;margin-bottom:24px;">With your permission we pull from your POS, loyalty program, or review platforms. We clean it, build a dashboard, and run the analysis. You don't touch anything technical.</p>
+          <div style="background:#F7F4EF;border-radius:12px;padding:18px 20px;border-left:3px solid #8B6F47;">
+            <p style="font-size:13px;color:#1C1A17;line-height:1.6;">You're ordering 40 croissants every Monday. You're selling 18. That's <strong>$220 in waste</strong> every single week.</p>
+            <p style="font-size:12px;color:#8B6F47;margin-top:6px;font-style:italic;">→ Order 22 on Mondays. Check back in a month and tell us how much you saved.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-preview">
-      <h2 style="margin-bottom:40px;">Three questions. Three levels of help.</h2>
-      <div class="preview-grid">
-        <div class="preview-card" onclick="showPage('services')">
-          <div class="preview-tier">Free scan</div>
-          <div class="preview-q">"What's happening around me?"</div>
-          <p class="preview-desc">A quick look at your reviews and your top competitors. What are customers saying? Who's winning nearby — and why?</p>
-          <div class="preview-price">Free</div>
+    <!-- FREE SCAN CTA -->
+    <section style="padding:100px 48px;">
+      <div class="hp-who-grid">
+        <div>
+          <div class="eyebrow">Free — always</div>
+          <h2 style="font-size:46px;margin-bottom:20px;">Start with a <em>free look</em> at your business</h2>
+          <p style="font-size:15px;color:#5C5449;line-height:1.75;max-width:420px;margin-bottom:32px;">We scan your reviews and nearest competitors and send you a one-page summary within 48 hours. No login, no payment, no commitment.</p>
+          <button class="btn-primary" style="border-radius:8px;" onclick="showPage('contact')">Get the free scan →</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;">
+            <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Response time</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">48 hrs</div>
+            </div>
+            <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">First step cost</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">Free</div>
+            </div>
+            <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Typical turnaround</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">2 wks</div>
+            </div>
+            <div style="background:#EDE8DF;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5C5449;margin-bottom:4px;">Hackathon ranking</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;">1st 2026</div>
+            </div>
+          </div>
         </div>
-        <div class="preview-card" onclick="showPage('services')">
-          <div class="preview-tier">Descriptive — you choose</div>
-          <div class="preview-q">"What's happening inside my business?"</div>
-          <p class="preview-desc">Pick the analysis that fits — sales & waste, loyalty program, staff performance, or all three. Delivered as a dashboard you can check on your phone.</p>
-          <div class="preview-price">From $600</div>
+        <div class="hp-cta-photo">
+          <img src="images/img3.jpg" alt="Clean artisan bakery bread display with natural light">
+          <div class="hp-cta-badge">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1;color:#F7F4EF;">2 wks</div>
+            <div style="font-size:10px;color:#C4A882;text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">typical turnaround</div>
+          </div>
         </div>
-        <div class="preview-card" onclick="showPage('services')">
-          <div class="preview-tier">Predictive pro</div>
-          <div class="preview-q">"What's about to happen — and what should I do?"</div>
-          <p class="preview-desc">Demand forecasting and scenario simulation. What if you raise prices 10%? What will next month look like? Know before it happens.</p>
-          <div class="preview-price">From $1,200</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-cta">
-      <div>
-        <h2>Start with a<br><em>free look</em><br>at your business</h2>
-        <p>We scan your reviews and nearest competitors and send you a one-page summary within 48 hours. No login, no payment, no commitment.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-        <button class="btn-warm" onclick="showPage('contact')">Get the free scan</button>
-        <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:#4A4540;">Takes 2 minutes to request</span>
       </div>
     </section>
 

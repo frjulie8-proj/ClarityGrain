@@ -199,6 +199,76 @@
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size:16px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
   .footer-copy { font-family: 'DM Sans', sans-serif; font-size:12px; font-weight: 300; color: #5C5449; letter-spacing: 0.06em; }
 
+  /* ── HERO DASHBOARD ── */
+  .cg-wrap { min-height: 560px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+  .cg-left { background: #f0ede6; display: flex; align-items: center; justify-content: center; padding: 48px 40px; position: relative; overflow: hidden; }
+  .cg-right { background: #e8e4db; display: flex; align-items: center; justify-content: flex-start; padding: 56px 52px; }
+  .cg-dashboard { width: 100%; max-width: 440px; background: #faf8f4; border-radius: 10px; border: 1px solid #d9d3c8; overflow: hidden; box-shadow: 0 8px 40px rgba(42,38,32,0.12); }
+  .cg-db-topbar { padding: 10px 14px; border-bottom: 1px solid #e8e2d8; display: flex; align-items: center; justify-content: space-between; background: #faf8f4; }
+  .cg-db-logo-sm { font-size: 11px; color: #2a2620; }
+  .cg-db-logo-sm em { font-style: italic; font-family: 'Cormorant Garamond', serif; color: #9a7a3a; }
+  .cg-db-title { font-size: 11px; color: #6b6456; }
+  .cg-insight-badge { background: #2a2620; color: #faf8f4; font-size: 9px; padding: 3px 8px; border-radius: 4px; }
+  .cg-db-body { display: grid; grid-template-columns: 100px 1fr; min-height: 320px; }
+  .cg-sidebar { background: #f5f1eb; padding: 14px 0; border-right: 1px solid #e8e2d8; }
+  .cg-sidebar-item { font-size: 10px; padding: 6px 14px; color: #6b6456; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .cg-sidebar-item.active { color: #2a2620; font-weight: 500; background: #ede9e0; }
+  .cg-sidebar-item::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: #c8bfb0; flex-shrink: 0; }
+  .cg-sidebar-item.active::before { background: #9a7a3a; }
+  .cg-sidebar-wrap { position: relative; }
+  .cg-cafe-tag { padding: 12px 14px; border-top: 1px solid #e8e2d8; }
+  .cg-cafe-tag p { font-size: 9px; color: #2a2620; font-weight: 500; margin: 0 0 2px; }
+  .cg-cafe-tag span { font-size: 8px; color: #9a8a78; }
+  .cg-content { padding: 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+  .cg-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .cg-metric { background: #2a2620; color: #faf8f4; border-radius: 5px; padding: 7px 8px; }
+  .cg-metric.light { background: #f0ede6; color: #2a2620; }
+  .cg-metric-label { font-size: 7px; letter-spacing: 0.05em; opacity: 0.7; margin-bottom: 3px; text-transform: uppercase; }
+  .cg-metric-val { font-size: 14px; font-weight: 500; line-height: 1; }
+  .cg-metric-sub { font-size: 7px; margin-top: 2px; opacity: 0.6; }
+  .cg-metric-sub.up { color: #7ab87a; opacity: 1; }
+  .cg-metric-sub.down { color: #e07070; opacity: 1; }
+  .cg-middle { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cg-chart-box { background: #f5f1eb; border-radius: 5px; padding: 8px; }
+  .cg-chart-box-title { font-size: 8px; color: #9a8a78; margin-bottom: 6px; letter-spacing: 0.04em; }
+  .cg-bars { display: flex; align-items: flex-end; gap: 3px; height: 52px; }
+  .cg-bar { flex: 1; border-radius: 2px 2px 0 0; background: #2a2620; min-width: 0; }
+  .cg-bar.highlight { background: #9a7a3a; }
+  .cg-bar-labels { display: flex; gap: 3px; margin-top: 3px; }
+  .cg-bar-labels span { flex: 1; font-size: 6px; color: #9a8a78; text-align: center; }
+  .cg-insight-box { background: #f5f1eb; border-radius: 5px; padding: 8px; }
+  .cg-insight-title { font-size: 8px; color: #9a8a78; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .cg-insight-item { display: flex; gap: 5px; margin-bottom: 5px; align-items: flex-start; }
+  .cg-insight-dot { width: 5px; height: 5px; border-radius: 50%; background: #9a7a3a; flex-shrink: 0; margin-top: 2px; }
+  .cg-insight-text { font-size: 7.5px; color: #4a4238; line-height: 1.4; }
+  .cg-insight-text strong { color: #2a2620; font-weight: 500; }
+  .cg-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cg-table-box { background: #f5f1eb; border-radius: 5px; padding: 8px; }
+  .cg-table-box-title { font-size: 8px; color: #9a8a78; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .cg-table-row { display: grid; grid-template-columns: 1fr 40px 36px; gap: 4px; margin-bottom: 4px; align-items: center; }
+  .cg-table-header { font-size: 7px; color: #9a8a78; }
+  .cg-table-item { font-size: 8px; color: #2a2620; }
+  .cg-table-bar-wrap { background: #e8e2d8; height: 3px; border-radius: 2px; }
+  .cg-table-bar-fill { height: 3px; border-radius: 2px; background: #2a2620; }
+  .cg-sparkline-box { background: #f5f1eb; border-radius: 5px; padding: 8px; }
+  .cg-sparkline-title { font-size: 8px; color: #9a8a78; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .cg-right-content { max-width: 380px; }
+  .cg-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .cg-eyebrow-line { width: 24px; height: 1px; background: #9a7a3a; }
+  .cg-eyebrow-text { font-size: 10px; letter-spacing: 0.15em; color: #9a7a3a; font-weight: 400; }
+  .cg-headline { font-family: 'Cormorant Garamond', serif; font-size: 52px; line-height: 1.05; color: #2a2620; font-weight: 500; margin-bottom: 8px; }
+  .cg-headline em { color: #9a7a3a; font-style: italic; display: block; }
+  .cg-subtext { font-size: 14px; color: #6b6456; line-height: 1.65; margin-bottom: 36px; max-width: 300px; font-weight: 300; }
+  .cg-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .cg-btn-primary { background: #2a2620; color: #faf8f4; font-size: 10px; letter-spacing: 0.12em; padding: 13px 24px; border-radius: 4px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 400; border: none; white-space: nowrap; }
+  .cg-btn-secondary { background: transparent; color: #2a2620; font-size: 13px; padding: 13px 0; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 300; border: none; display: flex; align-items: center; gap: 6px; }
+  @media (max-width: 900px) {
+    .cg-wrap { grid-template-columns: 1fr; }
+    .cg-left { padding: 32px 20px; }
+    .cg-right { padding: 36px 28px; }
+    .cg-headline { font-size: 40px; }
+  }
+
   /* ── HOME v2 ── */
   .hp-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
   .hp-hero-photo { position: relative; overflow: hidden; }
@@ -261,17 +331,142 @@
   <div class="page" id="page-home">
 
     <!-- HERO -->
-    <div class="hp-hero">
-      <div class="hp-hero-photo">
-        <img src="images/img4.jpg" alt="ClarityGrain dashboard preview showing weekly revenue, insights, and analytics" style="object-fit:contain;background:#F7F4EF;">
+    <div class="cg-wrap">
+      <div class="cg-left">
+        <div class="cg-dashboard">
+          <div class="cg-db-topbar">
+            <div class="cg-db-logo-sm">Clarity<em>Grain</em></div>
+            <div class="cg-db-title">Overview — April 2026</div>
+            <div class="cg-insight-badge">1 new insight</div>
+          </div>
+          <div class="cg-db-body">
+            <div class="cg-sidebar-wrap" style="display:flex;flex-direction:column;justify-content:space-between;">
+              <div class="cg-sidebar">
+                <div class="cg-sidebar-item active">Overview</div>
+                <div class="cg-sidebar-item">Sales & waste</div>
+                <div class="cg-sidebar-item">Loyalty</div>
+                <div class="cg-sidebar-item">Staff</div>
+                <div class="cg-sidebar-item">Forecasting</div>
+                <div class="cg-sidebar-item">Reports</div>
+              </div>
+              <div class="cg-cafe-tag">
+                <p>Morning Shift Cafe</p>
+                <span>Hartford, CT · Module A+B</span>
+              </div>
+            </div>
+            <div class="cg-content">
+              <div class="cg-metrics">
+                <div class="cg-metric">
+                  <div class="cg-metric-label">Weekly Rev.</div>
+                  <div class="cg-metric-val">$4,820</div>
+                  <div class="cg-metric-sub up">+12% vs last wk</div>
+                </div>
+                <div class="cg-metric light">
+                  <div class="cg-metric-label">Food Waste</div>
+                  <div class="cg-metric-val">$214</div>
+                  <div class="cg-metric-sub down">-$38 vs last wk</div>
+                </div>
+                <div class="cg-metric light">
+                  <div class="cg-metric-label">Returning</div>
+                  <div class="cg-metric-val">61%</div>
+                  <div class="cg-metric-sub up">+4pts this mo.</div>
+                </div>
+                <div class="cg-metric light">
+                  <div class="cg-metric-label">Peak Hour</div>
+                  <div class="cg-metric-val" style="font-size:11px;margin-top:2px;">8–9am</div>
+                  <div class="cg-metric-sub">Mon–Fri</div>
+                </div>
+              </div>
+              <div class="cg-middle">
+                <div class="cg-chart-box">
+                  <div class="cg-chart-box-title">DAILY SALES THIS WEEK</div>
+                  <div class="cg-bars">
+                    <div class="cg-bar" style="height:45%"></div>
+                    <div class="cg-bar" style="height:38%"></div>
+                    <div class="cg-bar" style="height:62%"></div>
+                    <div class="cg-bar" style="height:70%"></div>
+                    <div class="cg-bar highlight" style="height:85%"></div>
+                    <div class="cg-bar highlight" style="height:88%"></div>
+                    <div class="cg-bar" style="height:52%"></div>
+                  </div>
+                  <div class="cg-bar-labels">
+                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                  </div>
+                </div>
+                <div class="cg-insight-box">
+                  <div class="cg-insight-title">THIS WEEK'S INSIGHT</div>
+                  <div class="cg-insight-item">
+                    <div class="cg-insight-dot"></div>
+                    <div class="cg-insight-text">You ordered <strong>40 croissants</strong> Monday. Sold 18. $220 in waste weekly.</div>
+                  </div>
+                  <div class="cg-insight-item">
+                    <div class="cg-insight-dot" style="background:#2a2620"></div>
+                    <div class="cg-insight-text"><strong>Order 22</strong> on Mondays. Saves ~$180/mo.</div>
+                  </div>
+                  <div class="cg-insight-item">
+                    <div class="cg-insight-dot" style="background:#c8bfb0"></div>
+                    <div class="cg-insight-text">34% of 1-star reviews mention <strong>wait times</strong> 8–9am weekdays.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cg-bottom">
+                <div class="cg-table-box">
+                  <div class="cg-table-box-title">TOP & BOTTOM ITEMS</div>
+                  <div class="cg-table-row">
+                    <span class="cg-table-header">ITEM</span>
+                    <span class="cg-table-header">SOLD/WK</span>
+                    <span class="cg-table-header">MARGIN</span>
+                  </div>
+                  <div class="cg-table-row">
+                    <div>
+                      <div class="cg-table-item">Latte</div>
+                      <div class="cg-table-bar-wrap"><div class="cg-table-bar-fill" style="width:85%"></div></div>
+                    </div>
+                    <span class="cg-table-item">182</span>
+                    <span class="cg-table-item" style="color:#7ab87a">68%</span>
+                  </div>
+                  <div class="cg-table-row">
+                    <div>
+                      <div class="cg-table-item">Avo toast</div>
+                      <div class="cg-table-bar-wrap"><div class="cg-table-bar-fill" style="width:52%"></div></div>
+                    </div>
+                    <span class="cg-table-item">94</span>
+                    <span class="cg-table-item">54%</span>
+                  </div>
+                </div>
+                <div class="cg-sparkline-box">
+                  <div class="cg-sparkline-title">LOYALTY — RETURN VISITS</div>
+                  <svg viewBox="0 0 120 52" width="100%" style="display:block;margin-top:4px;">
+                    <polyline points="0,42 20,38 40,35 60,30 80,22 100,18 120,12" fill="none" stroke="#9a7a3a" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="0" cy="42" r="2.5" fill="#9a7a3a"/>
+                    <circle cx="40" cy="35" r="2.5" fill="#9a7a3a"/>
+                    <circle cx="80" cy="22" r="2.5" fill="#9a7a3a"/>
+                    <circle cx="120" cy="12" r="2.5" fill="#9a7a3a"/>
+                    <text x="0" y="51" font-size="7" fill="#9a8a78">Jan</text>
+                    <text x="95" y="51" font-size="7" fill="#9a8a78">Apr</text>
+                    <text x="105" y="10" font-size="7" fill="#9a7a3a">61%</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="hp-hero-text">
-        <div class="eyebrow">Food & restaurant analytics</div>
-        <h1 style="font-size:38px;margin-bottom:18px;">Data that feeds<br><em>better decisions</em></h1>
-        <p style="font-size:15px;font-weight:300;line-height:1.7;color:#5C5449;max-width:340px;margin-bottom:28px;">We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
-        <div style="display:flex;gap:12px;">
-          <button class="btn-primary" style="border-radius:8px;" onclick="showPage('contact')">Get a free scan</button>
-          <button class="btn-ghost" style="border:1px solid #C4A882;border-radius:8px;padding:13px 26px;" onclick="showPage('services')">See how it works</button>
+      <div class="cg-right">
+        <div class="cg-right-content">
+          <div class="cg-eyebrow">
+            <div class="cg-eyebrow-line"></div>
+            <div class="cg-eyebrow-text">FOOD & RESTAURANT ANALYTICS</div>
+          </div>
+          <div class="cg-headline">
+            Data that feeds
+            <em>better decisions</em>
+          </div>
+          <p class="cg-subtext">We help independent restaurants, cafes, and food retailers understand their numbers — so they can stop guessing and start growing.</p>
+          <div class="cg-ctas">
+            <button class="cg-btn-primary" onclick="showPage('contact')">GET A FREE SCAN</button>
+            <button class="cg-btn-secondary" onclick="showPage('services')">See how it works →</button>
+          </div>
         </div>
       </div>
     </div>

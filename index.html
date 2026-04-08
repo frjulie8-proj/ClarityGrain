@@ -161,28 +161,38 @@
   .value-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
 
   /* ── CONTACT ── */
-  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; }
-  .contact-left { padding: 48px; border-right: 0.5px solid rgba(28,26,23,0.12); display: flex; flex-direction: column; justify-content: center; gap: 32px; }
-  .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: #1C1A17; line-height: 1.25; margin-bottom: 10px; }
-  .contact-left h2 em { font-style: italic; color: #8B6F47; }
-  .contact-left-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; line-height: 1.75; color: #5C5449; }
-  .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .contact-detail-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 4px; }
-  .contact-detail-val { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #1C1A17; }
-  .contact-right { padding: 48px; background: #1C1A17; display: flex; flex-direction: column; justify-content: center; }
-  .form-section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 28px; }
-  .form { display: flex; flex-direction: column; }
-  .form-group { margin-bottom: 20px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .form-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 8px; }
-  .form-input { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 8px 0; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; transition: border-color 0.2s; }
-  .form-input:focus { border-bottom-color: #C4A882; }
-  .form-input::placeholder { color: #5C5449; }
-  .form-textarea { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 8px 0; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; resize: none; height: 60px; }
-  .form-textarea::placeholder { color: #5C5449; }
-  .form-btn { background: transparent; color: #C4A882; border: 0.5px solid rgba(196,168,130,0.45); padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; margin-top: 4px; align-self: flex-start; transition: background 0.2s, color 0.2s, border-color 0.2s; }
-  .form-btn:hover { background: rgba(196,168,130,0.1); color: #F7F4EF; border-color: rgba(196,168,130,0.7); }
-  .form-note { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #4A4540; margin-top: 12px; line-height: 1.65; }
+  .cg-contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 92vh; }
+  .cg-contact-left { display: flex; flex-direction: column; justify-content: center; padding: 48px 52px; }
+  .cg-contact-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; line-height: 1.05; color: #1C1A17; margin-bottom: 18px; }
+  .cg-contact-h2 em { color: #8B6F47; font-style: italic; }
+  .cg-contact-sub { font-size: 14px; color: #5C5449; line-height: 1.75; margin-bottom: 36px; max-width: 400px; }
+  .cg-contact-sub em { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: #8B6F47; }
+  .cg-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+  .cg-meta-label { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 5px; }
+  .cg-meta-val { font-size: 14px; color: #1C1A17; }
+  .cg-contact-right { background: #1C1A17; padding: 56px 60px; display: flex; flex-direction: column; justify-content: center; }
+  .cg-form-head { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #8B7D6B; margin-bottom: 40px; }
+  .cg-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .cg-form-group { display: flex; flex-direction: column; margin-bottom: 32px; }
+  .cg-form-group.full { grid-column: 1 / -1; }
+  .cg-form-label { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 12px; }
+  .cg-form-input { background: transparent; border: none; border-bottom: 1px solid rgba(196,168,130,0.3); padding: 0 0 10px; font-size: 14px; color: #F7F4EF; outline: none; transition: border-color .2s; width: 100%; }
+  .cg-form-input::placeholder { color: rgba(247,244,239,0.22); }
+  .cg-form-input:focus { border-bottom-color: rgba(196,168,130,0.75); }
+  .cg-form-divider { grid-column: 1 / -1; height: 1px; background: rgba(196,168,130,0.1); margin: 0 0 32px; }
+  .cg-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 8px; }
+  .cg-submit-btn { background: #F7F4EF; color: #1C1A17; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; border-radius: 7px; border: none; cursor: pointer; flex-shrink: 0; transition: background .2s; }
+  .cg-submit-btn:hover { background: #EDE8DF; }
+  .cg-submit-note { font-size: 11px; color: rgba(247,244,239,0.28); line-height: 1.6; }
+  @media (max-width: 900px) {
+    .cg-contact { grid-template-columns: 1fr; }
+    .cg-contact-left { padding: 36px 28px; }
+    .cg-contact-h2 { font-size: 40px; }
+    .cg-contact-right { padding: 44px 28px; }
+    .cg-form-grid { grid-template-columns: 1fr; }
+    .cg-form-group.full { grid-column: 1; }
+    .cg-submit-row { flex-direction: column; align-items: flex-start; }
+  }
 
   footer { padding: 24px 48px; background: #2A2724; border-top: 0.5px solid rgba(196,168,130,0.12); display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }
@@ -562,65 +572,66 @@
 
   <!-- ══ CONTACT ══ -->
   <div class="page" id="page-contact">
-    <div class="page-hero">
-      <div class="eyebrow">Get in touch</div>
-      <h1>Start with<br><em>a free look</em></h1>
-    </div>
-    <div class="contact-layout">
-      <div class="contact-left">
-        <div>
-          <h2>We review your data.<br><em>You decide</em> what comes next.</h2>
-          <p class="contact-left-desc" style="margin-top:14px;">Send us your business name and email. We'll scan your public reviews and nearest competitors within 48 hours and send you a one-page summary — at no cost, no obligation.</p>
-        </div>
-        <div class="contact-details">
+    <section class="cg-contact">
+      <div class="cg-contact-left">
+        <div class="eyebrow" style="margin-bottom:24px;">Get in touch</div>
+        <h2 class="cg-contact-h2">Start with<br><em>a free look</em></h2>
+        <p class="cg-contact-sub">
+          We review your data. <em>You decide</em> what comes next.
+          Send us your business name and email — we'll scan your public
+          reviews and nearest competitors within 48 hours at no cost,
+          no obligation.
+        </p>
+        <div class="cg-meta-grid">
           <div>
-            <div class="contact-detail-label">Response time</div>
-            <div class="contact-detail-val">Within 48 hours</div>
-          </div>
-          <div>
-            <div class="contact-detail-label">First step cost</div>
-            <div class="contact-detail-val">Free — always</div>
+            <div class="cg-meta-label">Response time</div>
+            <div class="cg-meta-val">Within 48 hours</div>
           </div>
           <div>
-            <div class="contact-detail-label">What we need to start</div>
-            <div class="contact-detail-val">Just your business name</div>
+            <div class="cg-meta-label">First step cost</div>
+            <div class="cg-meta-val">Free — always</div>
           </div>
           <div>
-            <div class="contact-detail-label">Who we work with</div>
-            <div class="contact-detail-val">Restaurants, cafes, coffee shops, food retail</div>
+            <div class="cg-meta-label">What we need to start</div>
+            <div class="cg-meta-val">Just your business name</div>
           </div>
-        </div>
-      </div>
-      <div class="contact-right">
-        <span class="form-section-label">Send us a message</span>
-        <div class="form">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Your name</label>
-              <input class="form-input" type="text" placeholder="Maria">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Business name</label>
-              <input class="form-input" type="text" placeholder="The Corner Cafe">
-            </div>
+          <div>
+            <div class="cg-meta-label">Who we work with</div>
+            <div class="cg-meta-val">Restaurants, cafes, food retail</div>
           </div>
-          <div class="form-group">
-            <label class="form-label">Email address</label>
-            <input class="form-input" type="email" placeholder="maria@thecornercafe.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Type of business</label>
-            <input class="form-input" type="text" placeholder="Coffee shop, restaurant, food retail...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Your biggest challenge right now</label>
-            <textarea class="form-textarea" placeholder="Rising food costs, slow Tuesdays, bad reviews..."></textarea>
-          </div>
-          <button class="form-btn">Get in touch</button>
-          <p class="form-note">We'll review your public data and send you a one-page summary within 48 hours. No invoice, no follow-up pitch.</p>
         </div>
       </div>
-    </div>
+      <div class="cg-contact-right">
+        <div class="cg-form-head">Send us a message</div>
+        <div class="cg-form-grid">
+          <div class="cg-form-group">
+            <label class="cg-form-label">Your name</label>
+            <input class="cg-form-input" type="text" placeholder="Maria" autocomplete="name">
+          </div>
+          <div class="cg-form-group">
+            <label class="cg-form-label">Business name</label>
+            <input class="cg-form-input" type="text" placeholder="The Corner Cafe">
+          </div>
+          <div class="cg-form-group full">
+            <label class="cg-form-label">Email address</label>
+            <input class="cg-form-input" type="email" placeholder="maria@thecornercafe.com" autocomplete="email">
+          </div>
+          <div class="cg-form-group full">
+            <label class="cg-form-label">Type of business</label>
+            <input class="cg-form-input" type="text" placeholder="Coffee shop, restaurant, food retail...">
+          </div>
+          <div class="cg-form-divider"></div>
+          <div class="cg-form-group full">
+            <label class="cg-form-label">Your biggest challenge right now</label>
+            <input class="cg-form-input" type="text" placeholder="Rising food costs, slow Tuesdays, bad reviews...">
+          </div>
+        </div>
+        <div class="cg-submit-row">
+          <button class="cg-submit-btn" type="button">Get in touch</button>
+          <p class="cg-submit-note">We'll review your public data and send you a one-page summary within 48 hours. No invoice, no follow-up pitch.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <footer>

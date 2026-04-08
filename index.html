@@ -161,28 +161,28 @@
   .value-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.7; }
 
   /* ── CONTACT ── */
-  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-  .contact-left { padding: 64px 48px; border-right: 0.5px solid rgba(28,26,23,0.12); display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
-  .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #1C1A17; line-height: 1.25; margin-bottom: 14px; }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; }
+  .contact-left { padding: 48px; border-right: 0.5px solid rgba(28,26,23,0.12); display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+  .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: #1C1A17; line-height: 1.25; margin-bottom: 10px; }
   .contact-left h2 em { font-style: italic; color: #8B6F47; }
-  .contact-left-desc { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #5C5449; }
-  .contact-details { display: flex; flex-direction: column; gap: 18px; }
+  .contact-left-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; line-height: 1.75; color: #5C5449; }
+  .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .contact-detail-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 4px; }
-  .contact-detail-val { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #1C1A17; }
-  .contact-right { padding: 64px 48px; background: #1C1A17; }
-  .form-section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 36px; }
+  .contact-detail-val { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #1C1A17; }
+  .contact-right { padding: 48px; background: #1C1A17; display: flex; flex-direction: column; justify-content: center; }
+  .form-section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 28px; }
   .form { display: flex; flex-direction: column; }
-  .form-group { margin-bottom: 28px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .form-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 10px; }
-  .form-input { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; transition: border-color 0.2s; }
+  .form-group { margin-bottom: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A882; display: block; margin-bottom: 8px; }
+  .form-input { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 8px 0; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; transition: border-color 0.2s; }
   .form-input:focus { border-bottom-color: #C4A882; }
   .form-input::placeholder { color: #5C5449; }
-  .form-textarea { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; resize: none; height: 72px; }
+  .form-textarea { background: transparent; border: none; border-bottom: 0.5px solid rgba(196,168,130,0.35); padding: 8px 0; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #F7F4EF; outline: none; width: 100%; resize: none; height: 60px; }
   .form-textarea::placeholder { color: #5C5449; }
-  .form-btn { background: transparent; color: #C4A882; border: 0.5px solid rgba(196,168,130,0.45); padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; margin-top: 8px; align-self: flex-start; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .form-btn { background: transparent; color: #C4A882; border: 0.5px solid rgba(196,168,130,0.45); padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; margin-top: 4px; align-self: flex-start; transition: background 0.2s, color 0.2s, border-color 0.2s; }
   .form-btn:hover { background: rgba(196,168,130,0.1); color: #F7F4EF; border-color: rgba(196,168,130,0.7); }
-  .form-note { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #4A4540; margin-top: 14px; line-height: 1.65; }
+  .form-note { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #4A4540; margin-top: 12px; line-height: 1.65; }
 
   footer { padding: 24px 48px; background: #2A2724; border-top: 0.5px solid rgba(196,168,130,0.12); display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #8B7D6B; letter-spacing: 0.04em; }

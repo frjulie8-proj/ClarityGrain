@@ -90,36 +90,36 @@
   /* Tier cards */
   .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.1); margin: 0; }
 
-  .tier-card { background: #F7F4EF; padding: 40px 32px; display: flex; flex-direction: column; gap: 0; }
+  .tier-card { background: #F7F4EF; padding: 40px 32px; display: flex; flex-direction: column; gap: 0; transition: background 0.35s ease, transform 0.3s ease; }
   .tier-card.featured { background: #1C1A17; }
 
-  .tier-badge { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 8px; }
+  .tier-badge { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6F47; margin-bottom: 8px; transition: color 0.35s ease; }
   .tier-card.featured .tier-badge { color: #C4A882; }
 
-  .tier-question { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.25; margin-bottom: 6px; }
+  .tier-question { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; font-style: italic; color: #1C1A17; line-height: 1.25; margin-bottom: 6px; transition: color 0.35s ease; }
   .tier-card.featured .tier-question { color: #F7F4EF; }
 
-  .tier-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 20px; }
+  .tier-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #8B6F47; margin-bottom: 20px; transition: color 0.35s ease; }
   .tier-card.featured .tier-name { color: #6B5D4F; }
 
-  .tier-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #1C1A17; line-height: 1; margin-bottom: 4px; }
+  .tier-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: #1C1A17; line-height: 1; margin-bottom: 4px; transition: color 0.35s ease; }
   .tier-card.featured .tier-price { color: #F7F4EF; }
 
-  .tier-price-note { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #8B6F47; margin-bottom: 24px; }
+  .tier-price-note { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #8B6F47; margin-bottom: 24px; transition: color 0.35s ease; }
   .tier-card.featured .tier-price-note { color: #6B5D4F; }
 
-  .tier-divider { height: 0.5px; background: rgba(28,26,23,0.1); margin-bottom: 24px; }
+  .tier-divider { height: 0.5px; background: rgba(28,26,23,0.1); margin-bottom: 24px; transition: background 0.35s ease; }
   .tier-card.featured .tier-divider { background: rgba(247,244,239,0.08); }
 
-  .tier-includes { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 14px; }
+  .tier-includes { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8B6F47; margin-bottom: 14px; transition: color 0.35s ease; }
   .tier-card.featured .tier-includes { color: #6B5D4F; }
 
   .tier-items { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
-  .tier-item { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.5; display: flex; gap: 10px; }
+  .tier-item { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #5C5449; line-height: 1.5; display: flex; gap: 10px; transition: color 0.35s ease; }
   .tier-card.featured .tier-item { color: #8B7D6B; }
   .tier-item::before { content: '—'; color: #C4A882; flex-shrink: 0; }
 
-  .tier-btn { background: transparent; border: 0.5px solid rgba(28,26,23,0.25); color: #1C1A17; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.2s; margin-top: auto; }
+  .tier-btn { background: transparent; border: 0.5px solid rgba(28,26,23,0.25); color: #1C1A17; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.35s, color 0.35s; margin-top: auto; }
   .tier-btn:hover { background: #EDE8DF; border-color: rgba(28,26,23,0.4); }
   .tier-card.featured .tier-btn { border-color: rgba(196,168,130,0.4); color: #C4A882; }
   .tier-card.featured .tier-btn:hover { background: rgba(196,168,130,0.08); border-color: rgba(196,168,130,0.7); color: #F7F4EF; }
@@ -563,6 +563,23 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   showPage('home');
+
+  // Tier card hover — whichever card is hovered becomes featured
+  const tierCards = document.querySelectorAll('.tier-card');
+  tierCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      tierCards.forEach(c => c.classList.remove('featured'));
+      card.classList.add('featured');
+    });
+  });
+  // When mouse leaves the entire tier section, restore default (middle card)
+  const tiersContainer = document.querySelector('.tiers');
+  if (tiersContainer) {
+    tiersContainer.addEventListener('mouseleave', () => {
+      tierCards.forEach(c => c.classList.remove('featured'));
+      tierCards[1].classList.add('featured');
+    });
+  }
 </script>
 </body>
 </html>
